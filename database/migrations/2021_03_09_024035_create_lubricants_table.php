@@ -27,6 +27,8 @@ class CreateLubricantsTable extends Migration
                 ->onDelete('cascade');
             $table->string('image')
                 ->default('default.png');
+            $table->string('datasheet')
+                ->nullable();
             $table->boolean('active')
                 ->default(true);
             $table->timestamps();

@@ -24,13 +24,19 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/ef4ce1cded.js" crossorigin="anonymous"></script>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app">
+    @include('components.website.top_bar')
+    @include('components.website.nav')
 
     @yield('content')
+
+    @include('components.website.footer')
 
 </div>
 </body>
