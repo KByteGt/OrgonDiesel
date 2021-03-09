@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Orgon Diesel') }}</title>
     <meta content="Orgon Diesel Website" name="description">
     <meta content="Repuestos al instante, lubricantes, turbos, inyección diesel, lubricants, diesel injection" name="keywords">
     <meta content="Jose Lopez, @KByteGt" name="author">
