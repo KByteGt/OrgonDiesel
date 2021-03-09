@@ -10021,9 +10021,6 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.5s;
   color: white;
 }
-#topbar .topbar-scrolled {
-  top: -40px;
-}
 #topbar .contact-info a {
   line-height: 1;
   color: white;
@@ -10056,12 +10053,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 15px 0;
   top: 40px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  transition-durarion: 0.5s;
-  transition-property: all;
-}
-#header .header-scrolled {
-  top: 0;
-  padding: 15px;
+  transition: all 0.5s;
 }
 #header .logo {
   margin: 0;
@@ -10069,6 +10061,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 #header .logo img {
   max-height: 50px;
+}
+
+.topbar-scrolled {
+  top: -40px;
+}
+
+.header-scrolled {
+  top: 0 !important;
+  padding: 15px;
 }
 
 .nav-menu ul {
@@ -10285,5 +10286,93 @@ h1, h2, h3, h4, h5, h6 {
   }
   .nav-menu .drop-down .drop-down > a:after {
     content: "";
+  }
+}
+#hero {
+  width: 100%;
+  height: 85vh;
+  position: relative;
+  margin-top: 90px;
+  background-image: url(/images/slider2.jpg?312b06447af99324ea2a2f862f250dca);
+  background-position: top left;
+  background-size: cover;
+}
+#hero:before {
+  content: "";
+  background: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+#hero .container {
+  position: relative;
+  padding-top: 132px;
+}
+#hero h1 {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 56px;
+  color: #222222;
+  font-family: "Poppins", sans-serif;
+}
+#hero h1 span {
+  color: #DB0016;
+}
+#hero h2 {
+  color: #555555;
+  margin: 5px 0 30px 0;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+#hero .btn-action {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 28px;
+  border-radius: 4px;
+  transition: 0.5s;
+  color: white;
+  background: #DB0016;
+}
+#hero .btn-action:hover {
+  background: #ED0016;
+}
+
+@media (max-width: 992px) {
+  #hero .container {
+    padding-top: 58px;
+  }
+}
+@media (max-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+@media (max-width: 768px) {
+  #hero {
+    height: 100vh;
+  }
+  #hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  #hero h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+  #hero .btn-action {
+    font-size: 0.8em;
+  }
+}
+@media (max-width: 500px) {
+  #hero {
+    height: 120vh;
   }
 }
