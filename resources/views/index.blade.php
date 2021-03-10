@@ -7,6 +7,12 @@
     <<main id="main">
         @include('components.website.about')
 
+        <x-section id="products" class="" title="Productos" subtitle="Nuestros <span>productos</span>">
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                <img src="{{ asset('./img/logo_orgondiesel.png') }}" class="img-fluid" alt="">
+            </div>
+        </x-section>
+
         <section id="products" class="about">
             <div class="container">
 

@@ -21,7 +21,7 @@
            </div>
 
            <div class="carousel-item">
-               <img src="{{ asset('./img/hero/slider1.jpg') }}" class="d-block w-100" alt="...">
+               <img src="{{ asset('./img/hero/yuko-lubricants.jpg') }}" class="d-block w-100" alt="...">
                <div class="carousel-container">
                    <div class="hero-caption">
                        <h1> Lubricantes <span>YUKO</span></h1>
