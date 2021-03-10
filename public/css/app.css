@@ -10374,6 +10374,9 @@ section {
   margin-top: 125px;
   padding: 10px 5px;
 }
+#hero .carousel-container .hero-caption img {
+  max-height: 180px;
+}
 #hero .carousel-container .hero-caption h1 {
   margin: 0;
   font-size: 3rem;
