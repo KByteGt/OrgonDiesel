@@ -11,7 +11,7 @@
                <img src="{{ asset('./img/hero/bosh.jpg') }}" class="d-block w-100" alt="...">
                <div class="carousel-container">
                    <div class="hero-caption">
-                       <h1> Repuestos <span>BOSH</span></h1>
+                       <h1> Repuestos <span>BOSCH</span></h1>
                        <h2>Las mejores partes para tu vehiculo</h2>
                        <div class="d-flex">
                            <a href="" class="btn-action">Ver más...</a>

@@ -18,14 +18,12 @@ class Section extends Component
      * @param $class
      * @param $title
      * @param $subtitle
-     * @param null $paragraph
      */
-    public function __construct($id, $tag, $title, $paragraph = null)
+    public function __construct($id, $tag, $title)
     {
         $this->id = $id;
         $this->title = $title;
         $this->tag = $tag;
-        $this->paragraph = $paragraph;
     }
 
     /**
