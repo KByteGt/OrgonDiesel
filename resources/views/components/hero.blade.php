@@ -8,7 +8,7 @@
        </ol>
        <div class="carousel-inner">
            <div class="carousel-item active">
-               <img src="{{ asset('./img/hero/slider0.jpg') }}" class="d-block w-100" alt="...">
+               <img src="{{ asset('./img/hero/bosh.jpg') }}" class="d-block w-100" alt="...">
                <div class="carousel-container">
                    <div class="hero-caption">
                        <h1> Repuestos <span>BOSH</span></h1>
@@ -33,7 +33,7 @@
                </div>
            </div>
            <div class="carousel-item">
-               <img src="{{ asset('./img/hero/slider3.jpg') }}" class="d-block w-100" alt="...">
+               <img src="{{ asset('./img/hero/atech-turbos.jpg') }}" class="d-block w-100" alt="...">
                <div class="carousel-container">
                    <div class="hero-caption">
                        <h1> Bienvenido a <span>Orgon Diesel</span></h1>

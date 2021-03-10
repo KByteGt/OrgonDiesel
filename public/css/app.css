@@ -10365,9 +10365,9 @@ section {
   left: 0;
   top: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.35);
   padding-left: 15%;
-  padding-right: 40%;
+  padding-right: 50%;
 }
 #hero .carousel-container .hero-caption {
   margin-top: 125px;
