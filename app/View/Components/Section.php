@@ -7,9 +7,8 @@ use Illuminate\View\Component;
 class Section extends Component
 {
      public $id;
-     public $class;
      public $title;
-     public $subtitle;
+     public $tag;
      public $paragraph;
 
     /**
@@ -21,12 +20,11 @@ class Section extends Component
      * @param $subtitle
      * @param null $paragraph
      */
-    public function __construct($id, $class, $title, $subtitle, $paragraph = null)
+    public function __construct($id, $tag, $title, $paragraph = null)
     {
         $this->id = $id;
-        $this->class = $class;
         $this->title = $title;
-        $this->subtitle = $subtitle;
+        $this->tag = $tag;
         $this->paragraph = $paragraph;
     }
 

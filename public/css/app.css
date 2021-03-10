@@ -10343,7 +10343,6 @@ section {
 }
 #hero {
   width: 100%;
-  height: 85vh;
   position: relative;
   margin-top: 115px;
   background-color: white;
@@ -10359,14 +10358,16 @@ section {
   left: 0;
   right: 0;
 }
+#hero .carousel-width {
+  width: 10% !important;
+}
 #hero .carousel-container {
   position: absolute;
   right: 0;
   left: 0;
   top: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.35);
-  padding-left: 15%;
+  padding-left: 10%;
   padding-right: 50%;
 }
 #hero .carousel-container .hero-caption {
@@ -10386,7 +10387,10 @@ section {
 }
 #hero .carousel-container .hero-caption h2 {
   color: #444444;
-  margin: 5px 0 30px 0;
+  margin-top: 5px;
+  margin-left: 0;
+  margin-bottom: 30px;
+  margin-right: 25%;
   font-size: 1.6rem;
   font-weight: 400;
 }
@@ -10402,6 +10406,7 @@ section {
   transition: 0.5s;
   color: white;
   background: #DB0016;
+  margin-left: 20px;
 }
 #hero .carousel-container .hero-caption .btn-action:hover {
   background: #ED0016;

@@ -25,7 +25,7 @@
                <div class="carousel-container">
                    <div class="hero-caption">
                        <h1> Lubricantes <span>YUKO</span></h1>
-                       <h2>Loa mejores aceites automotrices e industriales, con los mejores estándares de calidad</h2>
+                       <h2>Los mejores aceites automotrices e industriales, con los mejores estándares de calidad</h2>
                        <div class="d-flex">
                            <a href="" class="btn-action">Ver más...</a>
                        </div>
@@ -45,11 +45,11 @@
                </div>
            </div>
        </div>
-       <a class="carousel-control-prev" href="#hero" role="button" data-slide="prev">
+       <a class="carousel-control-prev carousel-width" href="#hero" role="button" data-slide="prev">
            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
            <span class="sr-only">Previous</span>
        </a>
-       <a class="carousel-control-next" href="#hero" role="button" data-slide="next">
+       <a class="carousel-control-next carousel-width" href="#hero" role="button" data-slide="next">
            <span class="carousel-control-next-icon" aria-hidden="true"></span>
            <span class="sr-only">Next</span>
        </a>
