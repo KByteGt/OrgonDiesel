@@ -35,7 +35,7 @@
 
                 <div class="col-lg-3 col-md-6 footer-links">
                     <h4>Redes sociales</h4>
-                    <p>Follow us</p>
+                    <p>Siguenos en nuestras redes sociales</p>
                     <div class="social-links mt-3">
                         <a href="#" class="facebook"><i class="fab fa-facebook-square"></i></a>
                         <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>

@@ -4,15 +4,74 @@
 
     <x-hero/>
 
-    <div class="container">
-        <h1 class="p-4">Titulo 1</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores at cum cumque delectus distinctio dolore eligendi, enim esse, eum exercitationem facere harum illo nesciunt optio quas repudiandae suscipit veniam?</p>
+    <<main id="main">
+        @include('components.website.about')
 
-        <h1 class="p-4">Titulo 1</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores at cum cumque delectus distinctio dolore eligendi, enim esse, eum exercitationem facere harum illo nesciunt optio quas repudiandae suscipit veniam?</p>
+        <section id="products" class="about">
+            <div class="container">
 
-        <h1 class="p-4">Titulo 1</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores at cum cumque delectus distinctio dolore eligendi, enim esse, eum exercitationem facere harum illo nesciunt optio quas repudiandae suscipit veniam?</p>
-    </div>
+                <div class="section-title">
+                    <h2>@lang('Products')</h2>
+                    <h3>Nuestros <span>productos</span></h3>
+                    <p></p>
+                </div>
+
+                <div class="row">
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= Clients Section ======= -->
+        <section id="clients" class="clients section-bg">
+            <div class="container" data-aos="zoom-in">
+
+                <div class="row">
+
+                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                        <img src="{{ asset('./img/logo_orgondiesel.png') }}" class="img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                        <img src="{{ asset('./img/logo_orgondiesel.png') }}" class="img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                        <img src="{{ asset('./img/logo_orgondiesel.png') }}" class="img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                        <img src="{{ asset('./img/logo_orgondiesel.png') }}" class="img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                        <img src="{{ asset('./img/logo_orgondiesel.png') }}" class="img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                        <img src="{{ asset('./img/logo_orgondiesel.png') }}" class="img-fluid" alt="">
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Clients Section -->
+
+        <section id="contact" class="about ">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>@lang('Contact')</h2>
+                    <h3><span>Contáctanos</span></h3>
+                    <p></p>
+                </div>
+
+                <div class="row">
+
+                </div>
+            </div>
+        </section>
+
+    </main>
 
 @endsection

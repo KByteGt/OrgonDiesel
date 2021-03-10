@@ -10,3 +10,56 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
     font-family: "Roboto", sans-serif;
 }
+
+section {
+    padding: 60px 0;
+    overflow: hidden;
+}
+.section-bg {
+    background-color: $light-bg;
+}
+.section-title {
+    text-align: center;
+    padding-bottom: 30px;
+
+    h2 {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        font-weight: 700;
+        padding: 8px 20px;
+        margin: 0;
+        background: $red-bg;
+        color: $red-primary;
+        display: inline-block;
+        text-transform: uppercase;
+        border-radius: 50px;
+    }
+
+    h3 {
+        font-size: 2rem;
+        font-width: 700;
+        margin: {
+            top: 15px;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+
+        span {
+            color: $red-primary;
+        }
+    }
+
+    p {
+        margin: 15px auto 0 auto;
+        font-weight: 600;
+    }
+}
+
+@media (min-width: 1024px){
+    .section-title{
+        p {
+            width: 50%;
+        }
+    }
+}
