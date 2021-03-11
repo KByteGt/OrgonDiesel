@@ -41,7 +41,7 @@
                <div class="carousel-container">
                    <div class="hero-caption">
                        <h1> Lubricantes <span>YUKO</span></h1>
-                       <h2>Los mejores aceites automotrices e industriales<br><br>Calidad Europea</h2>
+                       <h2>Aceite Europeo de alta calidad para el sector automotriz, agrícola e indistrial</h2>
                        <div class="d-flex">
                            <a href="" class="btn-action">Ver más...</a>
                        </div>

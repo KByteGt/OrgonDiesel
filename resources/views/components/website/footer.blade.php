@@ -7,7 +7,7 @@
             <div class="row">
 
                 <div class="col-lg-3 col-md-6 footer-contact">
-                    <img src="{{ asset("./img/icon_orgondiesel.png") }}" alt="ORGON" class="img-fluid">
+                    <img src="{{ asset("./img/full_orgondiesel.png") }}" alt="ORGON" class="img-fluid">
                 </div>
 
                 <div class="col-lg-3 col-md-6 footer-contact">
