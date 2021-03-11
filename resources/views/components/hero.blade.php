@@ -30,7 +30,7 @@
                        <h1> Repuestos <span>BOSCH</span></h1>
                        <h2>Las mejores partes para tu vehiculo</h2>
                        <div class="d-flex">
-                           <a href="" class="btn-action">Ver más...</a>
+                           <a href="#product" class="btn-action">Ver más...</a>
                        </div>
                    </div>
                </div>
@@ -43,7 +43,7 @@
                        <h1> Lubricantes <span>YUKO</span></h1>
                        <h2>Aceite Europeo de alta calidad para el sector automotriz, agrícola e indistrial</h2>
                        <div class="d-flex">
-                           <a href="" class="btn-action">Ver más...</a>
+                           <a href="#product" class="btn-action">Ver más...</a>
                        </div>
                    </div>
                </div>
@@ -55,7 +55,7 @@
                        <h1>Repuestos <span>McBee</span></h1>
                        <h2>Los mejores repuestos para transporte pesado</h2>
                        <div class="d-flex">
-                           <a href="" class="btn-action">Ver más...</a>
+                           <a href="#product" class="btn-action">Ver más...</a>
                        </div>
                    </div>
                </div>
@@ -67,7 +67,7 @@
                        <h1>Turbos <span>ATECH</span></h1>
                        <h2>Los mejores turbos para tu maquinaria</h2>
                        <div class="d-flex">
-                           <a href="" class="btn-action">Ver más...</a>
+                           <a href="#product" class="btn-action">Ver más...</a>
                        </div>
                    </div>
                </div>

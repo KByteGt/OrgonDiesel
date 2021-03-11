@@ -1,18 +1,18 @@
 <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-        <a href="{{route('index')}}" class="logo mr-auto">
+        <a href="{{route('index')}}#" class="logo mr-auto">
             <img src="{{asset('./img/logo_orgondiesel.png')}}" alt="Orgon Diesel Logo" class="img-logo">
         </a>
 
         <nav class="nav-menu d-none d-lg-block">
             <ul>
                 <li class="active">
-                    <a href="{{route('index')}}">@lang('Home')</a>
+                    <a href="{{route('index')}}/#">@lang('Home')</a>
                 </li>
-                <li><a href="#about">@lang('About')</a></li>
+                <li class=""><a href="{{route('index')}}/#about">@lang('About')</a></li>
                 <li class="drop-down">
-                    <a href="#products">@lang('Products')</a>
+                    <a href="{{route('index')}}/#products">@lang('Products')</a>
                     <ul>
                         <li><a href="">@lang('Diesel injection')</a></li>
                         <li><a href="">@lang('Turbos')</a></li>
@@ -26,7 +26,7 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="#contacto">@lang('Contact')</a></li>
+                <li class=""><a href="{{route('index')}}/#contact">@lang('Contact')</a></li>
             </ul>
         </nav>
     </div>
