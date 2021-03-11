@@ -1,4 +1,4 @@
-<x-section id="about" class="about section-bg" tag="About" title="Un poco de <span>nosotros</span>">
+<x-section id="about" class="about section-bg" tag="Quienes somos" title="Un poco de <span>nosotros</span>">
     <div class="col-lg-6">
         <img src="{{ asset('./img/about_od.jpg') }}" alt="Orgon Diesel" class="img-fluid">
     </div>
