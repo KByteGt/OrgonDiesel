@@ -15,19 +15,16 @@ class CreateLubricantsTable extends Migration
     {
         Schema::create('lubricants', function (Blueprint $table) {
             $table->id();
-            $table->string('code')
+            $table->string('code',50)
                 ->unique();
-            $table->string('description');
-            $table->string('presentation');
+            $table->string('description',191);
+            $table->string('presentation',191);
             $table->text('detail');
-            $table->foreignId('category')
-                ->nullable()
-                ->constrained('product_category')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
-            $table->string('image')
+            $table->integer('category')
+                ->default(0);
+            $table->string('image',191)
                 ->default('default.png');
-            $table->string('datasheet')
+            $table->string('datasheet',191)
                 ->nullable();
             $table->boolean('active')
                 ->default(true);

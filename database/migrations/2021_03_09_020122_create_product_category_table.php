@@ -15,14 +15,11 @@ class CreateProductCategoryTable extends Migration
     {
         Schema::create('product_category', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('parent_id')
-                ->nullable()
-                ->constrained('product_category')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+            $table->integer('parent_id')
+                ->default(0);
             $table->boolean('active')
                 ->default(true);
-            $table->string('name');
+            $table->string('name',191);
             $table->timestamps();
         });
     }
