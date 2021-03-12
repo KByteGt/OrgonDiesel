@@ -4,13 +4,14 @@
         text-align: center;
         box-shadow: 0 0 30px rgba(214, 215, 216, 0.3);
         padding: {
-            top: 20px;
-            bottom: 30px;
+            top: 15px;
+            bottom: 25px;
         }
 
         i {
             font-size: 2rem;
             color: $red-primary;
+            margin-bottom: 15px;
         }
 
         h3 {

@@ -11,11 +11,11 @@
        <div class="carousel-inner">
            <div class="carousel-item active">
                <img src="{{ asset('./img/hero/ORGON.jpg') }}" class="d-block w-100" alt="Orgon website">
-               <div class="carousel-container">
+               <div class="carousel-container d-none d-sm-block">
                    <div class="hero-caption">
                        {{--<img src="{{ asset('./img/full_orgondiesel.png') }}" alt="Orgon Diesel Logo">--}}
                        <h1>Bienvenido a<br><span>ORGON DIESEL</span></h1>
-                       <h2>Repuestos al instante</h2>
+                       <h2 class="d-none d-md-block">Repuestos al instante</h2>
                        <div class="d-flex">
                            <a href="#about" class="btn-action">Quines somos</a>
                        </div>
@@ -25,12 +25,12 @@
 
            <div class="carousel-item">
                <img src="{{ asset('./img/hero/BOSCH-2021.jpg') }}" class="d-block w-100" alt="Orgon bosch 2021">
-               <div class="carousel-container">
+               <div class="carousel-container d-none d-sm-block">
                    <div class="hero-caption">
                        <h1> Repuestos <span>BOSCH</span></h1>
                        <h2>Las mejores partes para tu vehiculo</h2>
                        <div class="d-flex">
-                           <a href="#product" class="btn-action">Ver más...</a>
+                           <a href="#products" class="btn-action">Ver más...</a>
                        </div>
                    </div>
                </div>
@@ -38,36 +38,36 @@
 
            <div class="carousel-item">
                <img src="{{ asset('./img/hero/YUKO.jpg') }}" class="d-block w-100" alt="Orgon yuko 2021">
-               <div class="carousel-container">
+               <div class="carousel-container d-none d-sm-block">
                    <div class="hero-caption">
-                       <h1> Lubricantes <span>YUKO</span></h1>
-                       <h2>Aceite Europeo de alta calidad para el sector automotriz, agrícola e indistrial</h2>
+                       <h1>Lubricantes <span>YUKO</span></h1>
+                       <h2>Aceite Europeo de alta calidad para motos, vehículos livianos, comerciales, transporte pesado, agrícola e industrial</h2>
                        <div class="d-flex">
-                           <a href="#product" class="btn-action">Ver más...</a>
+                           <a href="#products" class="btn-action">Ver más...</a>
                        </div>
                    </div>
                </div>
            </div>
            <div class="carousel-item">
                <img src="{{ asset('./img/hero/MCBEE.jpg') }}" class="d-block w-100" alt="Orgon mcbee">
-               <div class="carousel-container">
+               <div class="carousel-container d-none d-sm-block">
                    <div class="hero-caption">
-                       <h1>Repuestos <span>McBee</span></h1>
+                       <h1>Repuestos <span>McBEE</span></h1>
                        <h2>Los mejores repuestos para transporte pesado</h2>
                        <div class="d-flex">
-                           <a href="#product" class="btn-action">Ver más...</a>
+                           <a href="#products" class="btn-action">Ver más...</a>
                        </div>
                    </div>
                </div>
            </div>
            <div class="carousel-item">
                <img src="{{ asset('./img/hero/ATECH.jpg') }}" class="d-block w-100" alt="Orgon atech">
-               <div class="carousel-container">
+               <div class="carousel-container d-none d-sm-block">
                    <div class="hero-caption">
                        <h1>Turbos <span>ATECH</span></h1>
                        <h2>Los mejores turbos para tu maquinaria</h2>
                        <div class="d-flex">
-                           <a href="#product" class="btn-action">Ver más...</a>
+                           <a href="#products" class="btn-action">Ver más...</a>
                        </div>
                    </div>
                </div>

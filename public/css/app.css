@@ -10478,19 +10478,30 @@ section {
 }
 
 @media (max-width: 992px) {
+  #hero .carousel-container {
+    padding-right: 45% !important;
+  }
   #hero .carousel-container .hero-caption {
-    padding-top: 58px;
+    padding-top: 0px;
   }
 }
 @media (max-width: 1024px) {
   #hero {
     background-attachment: fixed;
   }
+  #hero .hero-caption {
+    margin-top: 50px !important;
+  }
+}
+@media (max-width: 796px) {
+  #hero .carousel-container .hero-caption h2 {
+    display: none !important;
+  }
+  #hero .carousel-container .hero-caption h1 {
+    margin-bottom: 15px !important;
+  }
 }
 @media (max-width: 768px) {
-  #hero {
-    height: 100vh;
-  }
   #hero .carousel-container .hero-caption h1 {
     font-size: 28px;
     line-height: 36px;
@@ -10502,11 +10513,6 @@ section {
   }
   #hero .carousel-container .hero-caption .btn-action {
     font-size: 0.8em;
-  }
-}
-@media (max-width: 500px) {
-  #hero {
-    height: 120vh;
   }
 }
 #footer {
@@ -10738,12 +10744,13 @@ section {
   color: #444444;
   text-align: center;
   box-shadow: 0 0 30px rgba(214, 215, 216, 0.3);
-  padding-top: 20px;
-  padding-bottom: 30px;
+  padding-top: 15px;
+  padding-bottom: 25px;
 }
 #contact .info-box i {
   font-size: 2rem;
   color: #DB0016;
+  margin-bottom: 15px;
 }
 #contact .info-box h3 {
   font-size: 1.25rem;

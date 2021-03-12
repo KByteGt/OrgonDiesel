@@ -94,8 +94,9 @@
 @media (max-width: 992px) {
     #hero {
         .carousel-container {
+            padding-right: 45% !important;
             .hero-caption {
-                padding-top: 58px;
+                padding-top: 0px;
             }
         }
     }
@@ -104,12 +105,30 @@
 @media (max-width: 1024px) {
     #hero {
         background-attachment: fixed;
+
+        .hero-caption {
+            margin-top: 50px !important;
+        }
+    }
+}
+@media (max-width: 796px){
+    #hero {
+        .carousel-container{
+            .hero-caption{
+                h2 {
+                    display: none !important;
+                }
+                h1 {
+                    margin-bottom: 15px !important;
+                }
+            }
+        }
     }
 }
 
 @media (max-width: 768px) {
     #hero {
-        height: 100vh;
+        //height: 100vh;
         .carousel-container {
             .hero-caption{
                 h1 {
@@ -133,6 +152,6 @@
 
 @media (max-width: 500px){
     #hero {
-        height: 120vh;
+        //height: 120vh;
     }
 }

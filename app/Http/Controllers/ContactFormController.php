@@ -30,7 +30,7 @@ class ContactFormController extends Controller
             'updated_at' => $timestamp
         ]);
 
-        //Mail::to('josedan1996@gmail.com')->send(new ContactForm($fields));
+        Mail::to('info@orgondiesel.com')->send(new ContactForm($fields));
         return redirect('/#contact')->with('status','<strong>Correo enviado.</strong> Pronto te estaremos contactando');
         //return back()->with('status','<strong>Correo enviado</strong>> pronto te estaremos contactando');
         //return new ContactForm($fields);

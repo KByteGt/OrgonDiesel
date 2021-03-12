@@ -7,10 +7,10 @@
 
         <nav class="nav-menu d-none d-lg-block">
             <ul>
-                <li class="active">
-                    <a href="{{route('index')}}/#">@lang('Home')</a>
-                </li>
+                <li class="active"><a href="{{route('index')}}/#">@lang('Home')</a></li>
                 <li class=""><a href="{{route('index')}}/#about">@lang('About')</a></li>
+                <li class=""><a href="{{route('index')}}/#products">@lang('Products')</a></li>
+                {{--
                 <li class="drop-down">
                     <a href="{{route('index')}}/#products">@lang('Products')</a>
                     <ul>
@@ -26,6 +26,7 @@
                         </li>
                     </ul>
                 </li>
+                --}}
                 <li class=""><a href="{{route('index')}}/#contact">@lang('Contact')</a></li>
             </ul>
         </nav>

@@ -37,8 +37,7 @@
                     <h4>Redes sociales</h4>
                     <p>Siguenos en nuestras redes sociales</p>
                     <div class="social-links mt-3">
-                        <a href="#" class="facebook"><i class="fab fa-facebook-square"></i></a>
-                        <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/orgondiesel/" class="facebook" target="_blank"><i class="fab fa-facebook-square"></i></a>
                     </div>
                 </div>
 
@@ -48,7 +47,7 @@
 
     <div class="container py4">
         <dic class="copyright">
-            {{date('Y')}} &copy; Orgon Diesel Parts. @lang('All Rights Reserved')
+            {{date('Y')}} &copy; Orgon Diesel. @lang('All Rights Reserved')
         </dic>
         <div class="credits">
             <!-- All the links in the footer should remain intact. -->
