@@ -20,17 +20,19 @@ class ContactFormController extends Controller
            'content' => 'required|min:6'
         ]);
 
+        $timestamp = Carbon::now('America/Guatemala');
 
         DB::table('contacts')->insert([
             'name' => $fields['name'],
             'email' => $fields['email'],
             'phone' => $fields['phone'],
-            'created_at' => Carbon::now('America/Guatemala'),
-            'updated_at' => Carbon::now('America/Guatemala')
+            'created_at' => $timestamp,
+            'updated_at' => $timestamp
         ]);
 
-        Mail::to('josedan1996@gmail.com')->send(new ContactForm($fields));
-        return back()->with('status','<strong>Correo enviado</strong>> pronto te estaremos contactando');
+        //Mail::to('josedan1996@gmail.com')->send(new ContactForm($fields));
+        return redirect('/#contact')->with('status','<strong>Correo enviado.</strong> Pronto te estaremos contactando');
+        //return back()->with('status','<strong>Correo enviado</strong>> pronto te estaremos contactando');
         //return new ContactForm($fields);
     }
 }

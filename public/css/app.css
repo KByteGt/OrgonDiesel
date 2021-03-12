@@ -10792,3 +10792,8 @@ section {
 #contact .contact-form button[type=submit]:hover {
   background: #ED0016;
 }
+#contact .contact-form .invalid {
+  margin-left: 20px;
+  color: #DB0016;
+  font-size: 0.9rem;
+}

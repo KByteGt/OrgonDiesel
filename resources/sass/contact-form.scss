@@ -68,6 +68,12 @@
                 background: $red-secondary;
             }
         }
+
+        .invalid {
+            margin-left: 20px;
+            color: $red-primary;
+            font-size: 0.9rem;
+        }
     }
 }
 
