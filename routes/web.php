@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
+Route::post('/email', [\App\Http\Controllers\ContactFormController::class, 'store'])->name('sendMailContactForm');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

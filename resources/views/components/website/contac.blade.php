@@ -1,5 +1,12 @@
 <x-section id="contact" class="contact" tag="contacto" title="<span>Contáctanos</span>">
 
+    @if( session('status'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {!! session('status') !!}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fas fa-times"></i></button>
+    </div>
+    @endif
+
     <div class="col-lg-6">
         <div class="info-box mb-4">
             <i class="fas fa-map-marker-alt"></i>
@@ -30,22 +37,48 @@
     </div>
 
     <div class="col-lg-6">
-        <form action="" method="post" class="contact-form">
+        <form action="{{ route('sendMailContactForm') }}" method="post" class="contact-form">
+            @csrf
             <div class="col form-group">
-                <input type="text" name="name" id="name" class="form-control" placeholder="Nombre"/>
+                <input type="text" name="name" id="name" class="form-control" placeholder="Nombre" value="{{ old('name') }}"/>
+                @error('name')
+                <span class="invalid" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
             </div>
 
             <div class="col form-group">
-                <input type="email" name="email" id="email" class="form-control" placeholder="Correo electrónico">
+                <input type="email" name="email" id="email" class="form-control" placeholder="Correo electrónico" value="{{ old('email') }}">
+                @error('email')
+                <span class="invalid" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
             </div>
             <div class="col form-group">
-                <input type="text" name="subject" id="subject" class="form-control" placeholder="Asunto">
+                <input type="text" name="subject" id="subject" class="form-control" placeholder="Asunto" value="{{ old('subject') }}">
+                @error('subject')
+                <span class="invalid" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
             </div>
             <div class="col form-group">
-                <input type="number" name="phone" id="phone" class="form-control" placeholder="Número de teléfono">
+                <input type="number" name="phone" id="phone" class="form-control" placeholder="Número de teléfono" value="{{ old('phone') }}">
+                @error('phone')
+                <span class="invalid" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
             </div>
             <div class="col form-group">
-                <textarea name="message" id="message" placeholder="Mensaje"></textarea>
+                <textarea name="content" id="content" placeholder="Mensaje">{{ old('content') }}</textarea>
+                @error('content')
+                <span class="invalid" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
             </div>
             <div class="text-center">
                 <button type="submit">Enviar Mensaje</button>
