@@ -10808,3 +10808,54 @@ section {
   color: #DB0016;
   font-size: 0.9rem;
 }
+
+.products-view .item {
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-right: 4px;
+  background: white;
+  border: 1px solid #deebfd;
+  transition-duration: 0.2s;
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+}
+.products-view .item .item-img {
+  position: relative;
+  overflow: hidden;
+}
+.products-view .item .item-info {
+  padding: 25px 15px;
+}
+.products-view .item .item-info h4 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 1.4rem;
+  color: #222222;
+}
+.products-view .item .item-info span {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #aaaaaa;
+}
+.products-view .item .item-info p {
+  display: block;
+  font-size: 1rem;
+  line-height: 26px;
+  color: #777777;
+}
+.products-view .item .item-info a {
+  display: block;
+  width: 100%;
+  padding: 8px 0;
+  text-align: center;
+  background: #DB0016;
+  color: white;
+}
+.products-view .item .item-info a:hover {
+  background: #ED0016;
+}
+.products-view .item:hover {
+  border-color: white;
+  box-shadow: 0 0 25px 0 rgba(219, 0, 22, 0.1);
+}
