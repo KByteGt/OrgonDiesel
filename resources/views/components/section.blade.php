@@ -8,8 +8,6 @@
                 {{ $paragraph }}
             </div>
 
-            <div class="row">
-                {{ $slot }}
-            </div>
+            {{ $slot }}
         </div>
     </section>
