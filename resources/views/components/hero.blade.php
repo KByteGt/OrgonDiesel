@@ -15,7 +15,7 @@
                    <div class="hero-caption">
                        {{--<img src="{{ asset('./img/full_orgondiesel.png') }}" alt="Orgon Diesel Logo">--}}
                        <h1>Bienvenido a<br><span>ORGON DIESEL</span></h1>
-                       <h2 class="d-none d-md-block">Repuestos al instante</h2>
+                       <h2 class="d-none d-md-block">Especialistas en sistemas de inyección diesel, turbos y lubricantes.</h2>
                        <div class="d-flex">
                            <a href="#about" class="btn-action">Quines somos</a>
                        </div>

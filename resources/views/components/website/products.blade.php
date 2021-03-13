@@ -35,7 +35,7 @@
                 <i class="fas fa-oil-can"></i>
             </div>
             <h4>
-                <a href="">Lubricantes</a>
+                <a href="{{route('lubricants')}}">Lubricantes</a>
                 <p>Motos, Vehículos livianos, Vehículos semi pesados y pesados, Refrigerantes...</p>
             </h4>
         </div>

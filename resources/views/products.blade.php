@@ -11,7 +11,7 @@
     <main id="main" class="mt-nav">
 
 
-        <x-section id="products" class="featured-product section-bg" tag="productos" title="<span>Lubricantes</span>">
+        <x-section id="products" class="featured-product " tag="productos" title="<span>Lubricantes</span>">
 
             <x-slot name="paragraph">
                 <p>Resultado de la busquda: <strong>vehiculos livianos</strong></p>
