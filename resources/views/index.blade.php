@@ -7,74 +7,7 @@
 
 
     <main id="main">
-
-    {{--
-    <!-- ======= Team Section ======= -->
-    <section id="sales" class="sales">
-        <div class="container" data-aos="fade-up">
-            <div class="row">
-
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                    <div class="item">
-                        <div class="item-img">
-                            <img src="{{asset('./products/C104.jpg')}}" class="img-fluid" alt="">
-                        </div>
-                        <div class="item-info">
-                            <h4>OD-C104</h4>
-                            <span>Turbo</span>
-                            <p>Turbo datail informatión ...</p>
-                            <a href="" class="btn">Ver más</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                    <div class="item">
-                        <div class="item-img">
-                            <img src="{{asset('./products/C104.jpg')}}" class="img-fluid" alt="">
-                        </div>
-                        <div class="item-info">
-                            <h4>OD-C104</h4>
-                            <span>Turbo</span>
-                            <p>Turbo datail informatión ...</p>
-                            <a href="" class="btn">Ver más</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                    <div class="item">
-                        <div class="item-img">
-                            <img src="{{asset('./products/C104.jpg')}}" class="img-fluid" alt="">
-                        </div>
-                        <div class="item-info">
-                            <h4>OD-C104</h4>
-                            <span>Turbo</span>
-                            <p>Turbo datail informatión ...</p>
-                            <a href="" class="btn">Ver más</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                    <div class="item">
-                        <div class="item-img">
-                            <img src="{{asset('./products/C104.jpg')}}" class="img-fluid" alt="">
-                        </div>
-                        <div class="item-info">
-                            <h4>OD-C104</h4>
-                            <span>Turbo</span>
-                            <p>Turbo datail informatión ...</p>
-                            <a href="" class="btn">Ver más</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section><!-- End Team Section -->
-    --}}
+        <x-most-sold/>
 
     @include('components.website.about')
 
