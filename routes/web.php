@@ -18,9 +18,20 @@ Route::get('/', function () {
 })->name('index');
 
 //Lubricans route
-Route::get('/lubricantes', [\App\Http\Controllers\LubricantController::class, 'index'])->name('lubricants');
-Route::get('/lubricantes/{category}', [\App\Http\Controllers\LubricantController::class, 'show'])->name('lubricants.category');
-Route::get('/lubricantes/{category}/{id}', [\App\Http\Controllers\LubricantController::class, 'showCategorys'])->name('lubricants.product');
+Route::prefix('lubricantes')->group(function () {
+    Route::get('/', [\App\Http\Controllers\LubricantController::class, 'index'])->name('lubricants');
+    Route::get('/{code}', [\App\Http\Controllers\LubricantController::class, 'show'])->name('lubricants.show');
+});
+
+//Diesel inyections route
+Route::prefix('inyeccion')->group(function () {
+    Route::get('/')->name('inyections');
+});
+
+//Turbos route
+Route::prefix('turbos')->group(function () {
+    Route::get('/')->name('turbos');
+});
 
 
 Route::post('/email', [\App\Http\Controllers\ContactFormController::class, 'store'])->name('sendMailContactForm');

@@ -11,7 +11,7 @@
                     <i class="fas fa-truck-moving"></i>
                 </div>
                 <h4>
-                    <a href="">Inyección Diesel</a>
+                    <a href="{{route('inyections')}}">Inyección Diesel</a>
                     <p>Agujas, Anillos, Arandelas, Barrel y Pluger, Bobinas, Bombines, Copas, Cople, Diafragmas, Ejes y Flechas, Estresllas, Filtros, Inyectores...</p>
                 </h4>
             </div>
@@ -23,7 +23,7 @@
                     <i class="fas fa-car"></i>
                 </div>
                 <h4>
-                    <a href="">Turbos</a>
+                    <a href="{{route('turbos')}}">Turbos</a>
                     <p>Turbos, Cartuchos, Kits de turbos, Ejes, Turbinas de compresión, Platos, Actuadores...</p>
                 </h4>
             </div>

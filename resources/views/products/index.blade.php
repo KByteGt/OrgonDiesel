@@ -76,7 +76,7 @@
                                     <h4 class="card-title">OD-25009</h4>
                                     <span>Motocicleta</span>
                                     <p >4T 20W-50 Semisintetico 1L</p>
-                                    <a href="#" class="btn">Ver más</a>
+                                    <a href="{{route('lubricants.show', 'OD-25009')}}" class="btn">Ver más</a>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                                     <h4 class="card-title">OD-25012</h4>
                                     <span>Vehiculos Livianos</span>
                                     <p class="card-text">20W-50 Semisintetico Plus 5L</p>
-                                    <a href="#" class="btn">Ver más</a>
+                                    <a href="{{route('lubricants.show', 'OD-25012')}}" class="btn">Ver más</a>
                                 </div>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
                                     <h4 class="card-title">OD-25009</h4>
                                     <span>Motocicleta</span>
                                     <p >4T 20W-50 Semisintetico 1L</p>
-                                    <a href="#" class="btn">Ver más</a>
+                                    <a href="{{route('lubricants.show', 'OD-25009')}}" class="btn">Ver más</a>
                                 </div>
                             </div>
                         </div>

@@ -13,7 +13,7 @@ class LubricantController extends Controller
      */
     public function index()
     {
-        //
+        //Display products view
         $family = 'lubricantes';
         $categorys = ['motos', 'vehiculos pesados', 'vehiculos livianos', 'refrigerantes'];
         $items = [
@@ -23,7 +23,7 @@ class LubricantController extends Controller
             ['id' => 'od-066', 'nombre' => 'orden 66']
         ];
 
-        return view('products', [
+        return view('products.index', [
             'productFamily' => $family,
             'productCategorys' => $categorys,
             'products' => $items
@@ -33,28 +33,14 @@ class LubricantController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  $category
+     * @param  $code
      * @return \Illuminate\Http\Response
      */
-    public function show($category)
+    public function show($code)
     {
-        //
+        //Display detail view
 
-        return "Lubricants by {$category} - category";
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param $category
-     * @param $id
-     * @return void
-     */
-    public function showCategorys($category, $id)
-    {
-        //
-
-        return "Lubricants, {$category}, {$id}";
+        return "Lubricants by {$code} - code";
     }
 
 }
