@@ -1,10 +1,11 @@
 <section id="sales" class="sales">
     <div class="container" data-aos="fade-up">
+        <h3 class="text-center mb-4">{{ $slot }}</h3>
         <div class="row">
 
             @if($products)
                 @foreach($products as $product)
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="col-lg-3 col-md-6 col-12 ">
                         <div class="item">
                             <div class="item-img">
                                 <img src="{{asset($product['image'])}}" class="img-fluid" alt="">
@@ -22,6 +23,5 @@
 
 
         </div>
-
     </div>
 </section>

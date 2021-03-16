@@ -40,7 +40,7 @@
                 color: #777777;
             }
 
-            a {
+            a, button {
                 display: block;
                 width: 100%;
                 padding: 8px 0;
@@ -58,5 +58,48 @@
             border-color: white;
             box-shadow: 0 0 25px 0 $red-bg;
         }
+    }
+}
+
+.item-view {
+    .item-title {
+        font-size: 1.2em;
+        font-weight: 700;
+    }
+    .item-info {
+        padding: 25px 15px;
+
+        h4 {
+            font-weight: 700;
+            margin-bottom: 5px;
+            font-size: 1.4rem;
+            color: $gray-primary;
+        }
+
+        p {
+            margin: {
+                left: 10px;
+            }
+            display: block;
+            font-size: 1rem;
+            line-height: 26px;
+            color: #777777;
+        }
+
+    }
+}
+
+.btn-primary-red {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    text-align: center;
+    background: $red-primary;
+    color: white;
+    border: none;
+
+    &:hover {
+        background: $red-secondary;
+        color: white;
     }
 }

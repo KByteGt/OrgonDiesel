@@ -10844,7 +10844,7 @@ section {
   line-height: 26px;
   color: #777777;
 }
-.products-view .item .item-info a {
+.products-view .item .item-info a, .products-view .item .item-info button {
   display: block;
   width: 100%;
   padding: 8px 0;
@@ -10852,10 +10852,45 @@ section {
   background: #DB0016;
   color: white;
 }
-.products-view .item .item-info a:hover {
+.products-view .item .item-info a:hover, .products-view .item .item-info button:hover {
   background: #ED0016;
 }
 .products-view .item:hover {
   border-color: white;
   box-shadow: 0 0 25px 0 rgba(219, 0, 22, 0.1);
+}
+
+.item-view .item-title {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+.item-view .item-info {
+  padding: 25px 15px;
+}
+.item-view .item-info h4 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 1.4rem;
+  color: #222222;
+}
+.item-view .item-info p {
+  margin-left: 10px;
+  display: block;
+  font-size: 1rem;
+  line-height: 26px;
+  color: #777777;
+}
+
+.btn-primary-red {
+  display: block;
+  width: 100%;
+  padding: 8px 0;
+  text-align: center;
+  background: #DB0016;
+  color: white;
+  border: none;
+}
+.btn-primary-red:hover {
+  background: #ED0016;
+  color: white;
 }

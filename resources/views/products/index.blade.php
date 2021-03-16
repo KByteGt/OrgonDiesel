@@ -3,9 +3,11 @@
 @section('content')
     {{--
      // Vars
-     - $productFamily
-     - $productCategoys
-     - $products
+     - 'familyId'
+     - 'families'
+     - 'categories'
+     - 'products'
+     - 'search'
     --}}
 
     <main id="main" class="mt-nav">
@@ -13,10 +15,12 @@
 
         <x-section id="products" class="featured-product " tag="productos" title="<span>Lubricantes</span>">
 
-            <x-slot name="paragraph">
-                <p>Resultado de la busquda: <strong>vehiculos livianos</strong></p>
-                <a href="#">ver todo <i class="fas fa-stream"></i></a>
-            </x-slot>
+            @if($search)
+                <x-slot name="paragraph">
+                    <p>Resultado de la busquda: <strong>{{ $search }}</strong></p>
+                    <a href="{{route($familyId['url'])}}">ver todo <i class="fas fa-stream"></i></a>
+                </x-slot>
+            @endif
 
             <div class="row">
                 <div class="col-12 col-lg-3">
@@ -36,10 +40,9 @@
                                 <div class="input-group">
                                     <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
                                         <option selected>Por categoria?</option>
-                                        <option value="1">Motocicletas</option>
-                                        <option value="2">Vehiculos livianos</option>
-                                        <option value="3">Vehiculos semi pesados y pesados</option>
-                                        <option value="4">Refrigerantes</option>
+                                        @foreach($categories as $category)
+                                            <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
+                                        @endforeach
                                     </select>
                                     <div class="input-group-append">
                                         <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
@@ -50,16 +53,19 @@
                         <div class="card-body">
                             <p class="card-text">También te puede interesar:</p>
                             <hr>
-                            <a href="#" class="btn-block">Tubos</a>
-                            <a href="#" class="btn-block">Inyección Diésel</a>
+                            @foreach($families as $family)
+                                @if($family['id'] != $familyId['id'])
+                                    <a href="{{route($family['url'])}}" class="btn-block">{{$family['name']}}</a>
+                                @endif
+                            @endforeach
                         </div>
                     </div>
 
                     <p class="px-2">Si deseas más información no dudes en llamarnos o consultando en nuestras redes sociales</p>
                     <div class="px-2 mb-4">
-                        <a href="" class="btn-block"><i class="fab fa-facebook-square"></i> @orgondiesel</a>
-                        <a href="" class="btn-block"><i class="fab fa-whatsapp"></i> +502 5463 7035</a>
-                        <a href="" class="btn-block"><i class="fas fa-fax"></i> +502 2500 0200</a>
+                        <a href="https://www.facebook.com/orgondiesel/" class="btn-block"><i class="fab fa-facebook-square"></i> @orgondiesel</a>
+                        <a href="https://wa.me/50254637035" class="btn-block"><i class="fab fa-whatsapp"></i> +502 5463 7035</a>
+                        <a href="tel:+50225000200" class="btn-block"><i class="fas fa-fax"></i> +502 2500 0200</a>
                     </div>
 
 
@@ -69,149 +75,22 @@
 
                     <div class="row row-cols-1 row-cols-md-3">
 
+                        @forelse($products as $product)
                         <div class="col mb-4">
                             <div class="card h-100 item">
-                                <img src="{{ asset('./products/lubricants/DSC_0342.png') }}" class="card-img-top" alt="...">
+                                <img src="{{ asset($product['image']) }}" class="card-img-top" alt="Imagen de {{ $product['id'] }}">
                                 <div class="card-body item-info">
-                                    <h4 class="card-title">OD-25009</h4>
-                                    <span>Motocicleta</span>
-                                    <p >4T 20W-50 Semisintetico 1L</p>
-                                    <a href="{{route('lubricants.show', 'OD-25009')}}" class="btn">Ver más</a>
+                                    <h4 class="card-title">{{ $product['id'] }}</h4>
+                                    <span>{{ $product['category'] }}</span>
+                                    <p>{{ $product['description'] }}</p>
+                                    <a href="{{route($familyId['url'] . '.show', $product['id'])}}" class="btn">Ver más</a>
                                 </div>
                             </div>
                         </div>
+                        @empty
 
-                        <div class="col mb-4">
-                            <div class="card h-100 item">
-                                <img src="{{ asset('./products/lubricants/DSC_0320.png') }}" class="card-img-top" alt="...">
-                                <div class="card-body item-info">
-                                    <h4 class="card-title">OD-25012</h4>
-                                    <span>Vehiculos Livianos</span>
-                                    <p class="card-text">20W-50 Semisintetico Plus 5L</p>
-                                    <a href="{{route('lubricants.show', 'OD-25012')}}" class="btn">Ver más</a>
-                                </div>
-                            </div>
-                        </div>
+                        @endforelse
 
-                        <div class="col mb-4">
-                            <div class="card h-100 item">
-                                <img src="{{ asset('./products/lubricants/DSC_0342.png') }}" class="card-img-top" alt="...">
-                                <div class="card-body item-info">
-                                    <h4 class="card-title">OD-25009</h4>
-                                    <span>Motocicleta</span>
-                                    <p >4T 20W-50 Semisintetico 1L</p>
-                                    <a href="{{route('lubricants.show', 'OD-25009')}}" class="btn">Ver más</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col mb-4">
-                            <div class="card h-100 item">
-                                <img src="{{ asset('./products/lubricants/DSC_0320.png') }}" class="card-img-top" alt="...">
-                                <div class="card-body item-info">
-                                    <h4 class="card-title">OD-25012</h4>
-                                    <span>Vehiculos Livianos</span>
-                                    <p class="card-text">20W-50 Semisintetico Plus 5L</p>
-                                    <a href="#" class="btn">Ver más</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col mb-4">
-                            <div class="card h-100 item">
-                                <img src="{{ asset('./products/lubricants/DSC_0342.png') }}" class="card-img-top" alt="...">
-                                <div class="card-body item-info">
-                                    <h4 class="card-title">OD-25009</h4>
-                                    <span>Motocicleta</span>
-                                    <p class="card-text">4T 20W-50 Semisintetico 1L</p>
-                                    <a href="#" class="btn">Ver más</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col mb-4">
-                            <div class="card h-100 item">
-                                <img src="{{ asset('./products/lubricants/DSC_0320.png') }}" class="card-img-top" alt="...">
-                                <div class="card-body item-info">
-                                    <h4 class="card-title">OD-25012</h4>
-                                    <span>Vehiculos Livianos</span>
-                                    <p class="card-text">20W-50 Semisintetico Plus 5L</p>
-                                    <a href="#" class="btn">Ver más</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col mb-4">
-                            <div class="card h-100 item">
-                                <img src="{{ asset('./products/lubricants/DSC_0342.png') }}" class="card-img-top" alt="...">
-                                <div class="card-body item-info">
-                                    <h4 class="card-title">OD-25009</h4>
-                                    <span>Motocicleta</span>
-                                    <p class="card-text">4T 20W-50 Semisintetico 1L</p>
-                                    <a href="#" class="btn">Ver más</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col mb-4">
-                            <div class="card h-100 item">
-                                <img src="{{ asset('./products/lubricants/DSC_0342.png') }}" class="card-img-top" alt="...">
-                                <div class="card-body item-info">
-                                    <h4 class="card-title">OD-25009</h4>
-                                    <span>Motocicleta</span>
-                                    <p class="card-text">4T 20W-50 Semisintetico 1L</p>
-                                    <a href="#" class="btn">Ver más</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col mb-4">
-                            <div class="card h-100 item">
-                                <img src="{{ asset('./products/lubricants/DSC_0320.png') }}" class="card-img-top" alt="...">
-                                <div class="card-body item-info">
-                                    <h4 class="card-title">OD-25012</h4>
-                                    <span>Vehiculos Livianos</span>
-                                    <p class="card-text">20W-50 Semisintetico Plus 5L</p>
-                                    <a href="#" class="btn">Ver más</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col mb-4">
-                            <div class="card h-100 item">
-                                <img src="{{ asset('./products/lubricants/DSC_0342.png') }}" class="card-img-top" alt="...">
-                                <div class="card-body item-info">
-                                    <h4 class="card-title">OD-25009</h4>
-                                    <span>Motocicleta</span>
-                                    <p class="card-text">4T 20W-50 Semisintetico 1L</p>
-                                    <a href="#" class="btn">Ver más</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col mb-4">
-                            <div class="card h-100 item">
-                                <img src="{{ asset('./products/lubricants/DSC_0320.png') }}" class="card-img-top" alt="...">
-                                <div class="card-body item-info">
-                                    <h4 class="card-title">OD-25012</h4>
-                                    <span>Vehiculos Livianos</span>
-                                    <p class="card-text">20W-50 Semisintetico Plus 5L</p>
-                                    <a href="#" class="btn">Ver más</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col mb-4">
-                            <div class="card h-100 item">
-                                <img src="{{ asset('./products/lubricants/DSC_0320.png') }}" class="card-img-top" alt="...">
-                                <div class="card-body item-info">
-                                    <h4 class="card-title">OD-25012</h4>
-                                    <span>Vehiculos Livianos</span>
-                                    <p class="card-text">20W-50 Semisintetico Plus 5L</p>
-                                    <a href="#" class="btn">Ver más</a>
-                                </div>
-                            </div>
-                        </div>
 
                     </div>
                     <nav aria-label="Page navigation example">
