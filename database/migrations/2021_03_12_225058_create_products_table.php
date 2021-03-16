@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->integer('family_id');
             $table->double('score')->default(0);
             $table->boolean('active')->default(true);
+            $table->boolean('assigned')->default(false);
             $table->timestamps();
         });
     }

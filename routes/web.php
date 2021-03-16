@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use \App\Http\Controllers\ProductController;
+use \App\Http\Controllers\HomeController;
+use \App\Http\Controllers\LubricantController;
+use \App\Http\Controllers\ContactFormController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,8 +22,8 @@ Route::get('/', function () {
 
 //Lubricans route
 Route::prefix('lubricantes')->group(function () {
-    Route::get('/', [\App\Http\Controllers\LubricantController::class, 'index'])->name('lubricants');
-    Route::get('/{code}', [\App\Http\Controllers\LubricantController::class, 'show'])->name('lubricants.show');
+    Route::get('/', [LubricantController::class, 'index'])->name('lubricants');
+    Route::get('/{code}', [LubricantController::class, 'show'])->name('lubricants.show');
 });
 
 //Diesel inyections route
@@ -34,9 +37,13 @@ Route::prefix('turbos')->group(function () {
 });
 
 
-Route::post('/email', [\App\Http\Controllers\ContactFormController::class, 'store'])->name('sendMailContactForm');
+Route::post('/email', [ContactFormController::class, 'store'])->name('sendMailContactForm');
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::prefix('/admin')->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::resource('products', ProductController::class);
+});

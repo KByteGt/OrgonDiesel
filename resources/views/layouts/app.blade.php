@@ -30,11 +30,19 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+                    @auth
                     <ul class="navbar-nav mr-auto">
-
+                        <li class="navbar-nav">
+                            <a class="nav-link" href="{{route('home')}}">Dashboard</a>
+                        </li>
+                        <li class="navbar-nav">
+                            <a class="nav-link" href="{{route('products.index')}}">Productos</a>
+                        </li>
                     </ul>
+                    @endauth
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -45,7 +53,7 @@
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
-                            
+
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
@@ -78,6 +86,10 @@
         <main class="py-4">
             @yield('content')
         </main>
+    </div>
+
+    <div class="text-center text-muted">
+        <p>{{ date('Y') }} &copy; Orgon Diesel<br>Designed by<br><strong>Art Mind Gt</strong></p>
     </div>
 </body>
 </html>
