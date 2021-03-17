@@ -4,9 +4,7 @@
 
     <div class="container">
         <x-status/>
-
         <x-errors text="Error al llenar el formulario" strong="New family"/>
-
     </div>
 
     <x-page-view>

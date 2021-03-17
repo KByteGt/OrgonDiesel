@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LubricantController extends Controller
 {
@@ -14,18 +15,23 @@ class LubricantController extends Controller
     public function index()
     {
         //Display products view
-        $family = ['id' => 3, 'name' => 'Lubricantes', 'url' => 'lubricants'];
-        $categories = [
-            [ 'id' => 1, 'name' => 'motos'],
-            [ 'id' => 2, 'name' => 'vehiculos pesados'],
-            [ 'id' => 3, 'name' => 'vehiculos livianos'],
-            [ 'id' => 4, 'name' => 'refrigerantes']
-        ];
-        $families = [
-            ['id' => 1, 'name' => 'Inyección Diésel', 'url' => 'inyections'],
-            ['id' => 2, 'name' => 'Turbos', 'url' => 'turbos'],
-            ['id' => 3, 'name' => 'Lubricantes', 'url' => 'lubricants']
-        ];
+        $family = DB::table('product_families')
+            ->where('name', 'Lubricantes')
+            ->get();
+
+        $categories = DB::table('product_categories')
+            ->where('family_id', $family[0]->id)
+            ->orderBy('name','ASC')
+            ->get();
+
+        //return $categories;
+
+        $families = DB::table('product_families')
+            ->orderBy('name','ASC')
+            ->get();
+
+        //return $families;
+
         $search = null;
         $items = [
             ['id' => 'OD-25009', 'category' => 'Motocicleta', 'description' => '4T 20W-50 Semisintetico 1L', 'image' => '/products/lubricants/DSC_0342.png'],

@@ -65,5 +65,8 @@
     "status": "Estado",
     "updated at": "Actualiado el",
     "category": "Categoria",
-    "family": "Familia"
+    "family": "Familia",
+    "New product": "Nuevo Producto",
+    "code": "Código",
+    "AVG": "Promedio"
 }

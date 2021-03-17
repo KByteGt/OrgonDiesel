@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="container">
+        <x-status/>
+        <x-errors text="Error al llenar el formulario" strong="New product"/>
+    </div>
+
     <x-page-view>
         <x-slot name="menu">
             @include('admin.menu')
@@ -31,39 +36,25 @@
                 </tr>
                 </thead>
                 <tbody>
+                @forelse($products as $product)
                 <tr>
-                    <th scope="row">1</th>
+                    <th scope="row">{{$product->id}}</th>
                     <td>
-                        <a href="#">OD-5420</a>
+                        <a href="#">{{$product->code}}</a>
                     </td>
-                    <td>Inyección Diesel</td>
-                    <td>0</td>
-                    <td>
-                        Sin asignar
-                    </td>
+                    <td>{{$product->family}}</td>
+                    <td>{{$product->score}}</td>
+                    <td>{{$product->assigned == 0 ? 'Sin asignar' : 'Asignado'}}</td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>OD-5420</td>
-                    <td>Inyección Diesel</td>
-                    <td>5</td>
-                    <td>
-                        Asignado
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>OD-5420</td>
-                    <td>Inyección Diesel</td>
-                    <td>2.3</td>
-                    <td>
-                        Sin Asignar
-                    </td>
-                </tr>
+                @empty
+                    <tr>
+                        <td colspan="5"><p class="text-center">No hay productos</p></td>
+                    </tr>
+                @endforelse
                 </tbody>
             </table>
 
-
+            {{ $products->links() }}
         </x-card>
 
     </x-page-view>

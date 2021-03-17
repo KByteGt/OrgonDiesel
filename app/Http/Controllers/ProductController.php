@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use App\Models\Product_family;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -25,7 +28,15 @@ class ProductController extends Controller
     public function index()
     {
         //Return de products admin view
-        return view('admin.products.index');
+        $products = DB::table('products')
+            ->join('product_families','products.family_id','=','product_families.id')
+            ->select('products.*','product_families.name as family')
+            ->paginate(20);
+        $families = Product_family::orderBy('name','ASC')->get();
+        return view('admin.products.index', [
+            'products' => $products,
+            'families' => $families
+        ]);
     }
 
     /**
@@ -46,7 +57,25 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $fields =$request->validate([
+            'code' => 'required|unique:products',
+            'family' => 'required'
+        ]);
+
+        if($fields){
+            //Store the familie data
+            $product = new Product();
+            $product->code = strtoupper($request->code);
+            $product->family_id = $request->family;
+            $product->updateTimestamps();
+
+            $product->save();
+
+            return redirect()->back()->with('status', 'Producto '. $request->name .' creada exitosamente');
+        } else {
+            return redirect()->back()->with('status', 'No se pudo crear lel producto'. $request->name);
+        }
     }
 
     /**

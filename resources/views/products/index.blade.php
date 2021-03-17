@@ -15,10 +15,10 @@
 
         <x-section id="products" class="featured-product " tag="productos" title="<span>Lubricantes</span>">
 
-            @if($search)
+            @if($search != null)
                 <x-slot name="paragraph">
                     <p>Resultado de la busquda: <strong>{{ $search }}</strong></p>
-                    <a href="{{route($familyId['url'])}}">ver todo <i class="fas fa-stream"></i></a>
+                    <a href="{{route($familyId[0]->url)}}">ver todo <i class="fas fa-stream"></i></a>
                 </x-slot>
             @endif
 
@@ -41,7 +41,7 @@
                                     <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
                                         <option selected>Por categoria?</option>
                                         @foreach($categories as $category)
-                                            <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
+                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @endforeach
                                     </select>
                                     <div class="input-group-append">
@@ -54,8 +54,8 @@
                             <p class="card-text">También te puede interesar:</p>
                             <hr>
                             @foreach($families as $family)
-                                @if($family['id'] != $familyId['id'])
-                                    <a href="{{route($family['url'])}}" class="btn-block">{{$family['name']}}</a>
+                                @if($family->id != $familyId[0]->id)
+                                    <a href="{{route($family->url)}}" class="btn-block">{{$family->name}}</a>
                                 @endif
                             @endforeach
                         </div>
@@ -83,12 +83,12 @@
                                     <h4 class="card-title">{{ $product['id'] }}</h4>
                                     <span>{{ $product['category'] }}</span>
                                     <p>{{ $product['description'] }}</p>
-                                    <a href="{{route($familyId['url'] . '.show', $product['id'])}}" class="btn">Ver más</a>
+                                    <a href="{{route($familyId[0]->url . '.show', $product['id'])}}" class="btn">Ver más</a>
                                 </div>
                             </div>
                         </div>
                         @empty
-
+                        <p class="text-center">No hay productos disponibles por el momento</p>
                         @endforelse
 
 

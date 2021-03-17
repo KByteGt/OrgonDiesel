@@ -18,7 +18,9 @@ class DatabaseSeeder extends Seeder
             //ProductCategorySeeder::class,
             //LubricantSeeder::class,
             UserSeeder::class,
-            ProductFamily::class
+            FamilySeeder::class,
+            CategorieSeeder::class,
+            LubricantSeeder::class
         ]);
     }
 }
