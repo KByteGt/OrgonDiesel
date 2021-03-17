@@ -57,5 +57,13 @@
     "Job": "Trabajo",
     "Terms of service": "Terminos de servicio",
     "Privacy policy": "Politicas de privacidad",
-    "All Rights Reserved": "Todos los derechos reservados"
+    "All Rights Reserved": "Todos los derechos reservados",
+    "Categories": "Categorias",
+    "New category": "Nueva categoria",
+    "Family": "Familia",
+    "New family": "Nueva familia",
+    "status": "Estado",
+    "updated at": "Actualiado el",
+    "category": "Categoria",
+    "family": "Familia"
 }
