@@ -28,8 +28,7 @@ class CategoriesController extends Controller
 
         return view('admin.categories.index',[
             'categories' => $categories,
-            'families' => $families,
-            'count' => 1
+            'families' => $families
         ]);
     }
 

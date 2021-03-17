@@ -17,8 +17,7 @@ class FamiliesController extends Controller
         $families = Product_family::orderBy('name', 'ASC')->paginate(10);
 
         return view('admin.families.index', [
-            'families' => $families,
-            'count' => 1
+            'families' => $families
         ]);
     }
 

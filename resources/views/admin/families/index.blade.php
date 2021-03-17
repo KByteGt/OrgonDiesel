@@ -32,7 +32,7 @@
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">{{__('family')}}</th>
+                    <th scope="col">{{__('family')}} <i class="fas fa-sort-down"></i></th>
                     <th scope="col">{{__('URL')}}</th>
                     <th scope="col">{{__('updated at')}}</th>
                     <th scope="col">{{__('status')}}</th>
@@ -42,7 +42,7 @@
 
                 @forelse($families as $family)
                 <tr>
-                    <th scope="row">{{$count++}}</th>
+                    <th scope="row">{{$family->id}}</th>
                     <td><a href="{{route('families.show', $family->id)}}">{{ $family->name }}</a></td>
                     <td>{{ $family->url }}</td>
                     <td>{{ $family->updated_at }}</td>
