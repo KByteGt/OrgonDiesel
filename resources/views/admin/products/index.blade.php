@@ -3,7 +3,7 @@
 @section('content')
     <x-page-view>
         <x-slot name="menu">
-            @include('admin.products.menu')
+            @include('admin.menu')
         </x-slot>
 
         <x-card title="{{ __('Products') }}">

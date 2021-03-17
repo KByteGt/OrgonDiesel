@@ -5,6 +5,7 @@ use \App\Http\Controllers\ProductController;
 use \App\Http\Controllers\HomeController;
 use \App\Http\Controllers\LubricantController;
 use \App\Http\Controllers\ContactFormController;
+use \App\Http\Controllers\FamiliesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,5 +46,6 @@ Auth::routes(['register' => false]);
 
 Route::prefix('/admin')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
-    Route::resource('products', ProductController::class);
+    Route::resource('products', ProductController::class)->except('create');
+    Route::resource('families', FamiliesController::class)->except('create');
 });

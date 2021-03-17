@@ -16,8 +16,8 @@ class CreateProductFamiliesTable extends Migration
         Schema::create('product_families', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->boolean('active')->default(true);
             $table->string('url');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }
