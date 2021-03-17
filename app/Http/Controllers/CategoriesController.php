@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product_category;
 use App\Models\Product_family;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class FamiliesController extends Controller
+class CategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +16,18 @@ class FamiliesController extends Controller
      */
     public function index()
     {
-        $families = Product_family::orderBy('name', 'ASC')->paginate(10);
+        /*$categories = DB::table('product_categories')
+            ->join('product_families','product_categories.family_id','=','product_families.id')
+            ->select('product_categories.*','product_families.name as family')
+            ->get();*/
+        $categories = Product_category::orderBy('product_categories.name', 'ASC')
+            ->join('product_families','product_categories.family_id','=','product_families.id')
+            ->select('product_categories.*','product_families.name as family')
+            ->paginate(10);
+        $families = Product_family::orderBy('name','ASC')->get();
 
-        return view('admin.families.index', [
+        return view('admin.categories.index',[
+            'categories' => $categories,
             'families' => $families,
             'count' => 1
         ]);
@@ -41,23 +52,25 @@ class FamiliesController extends Controller
     public function store(Request $request)
     {
         //Validations
+
         $fields =$request->validate([
-           'name' => 'required||min:5',
-           'url' => 'required'
+            'name' => 'required||min:5',
+            'family' => 'required'
         ]);
+
 
         if($fields){
             //Store the familie data
-            $family = new Product_family;
-            $family->name = $request->name;
-            $family->url = str_replace(" ", "", strtolower($request->url));
-            $family->updateTimestamps();
+            $category = new Product_category;
+            $category->name = $request->name;
+            $category->family_id = $request->family;
+            $category->updateTimestamps();
 
-            $family->save();
+            $category->save();
 
-            return redirect()->back()->with('status', 'Familia '. $request->name .' creada exitosamente');
+            return redirect()->back()->with('status', 'Categoria '. $request->name .' creada exitosamente');
         } else {
-            return redirect()->back()->with('status', 'No se pudo crear la familia'. $request->name);
+            return redirect()->back()->with('status', 'No se pudo crear la categoria'. $request->name);
         }
     }
 
@@ -69,12 +82,7 @@ class FamiliesController extends Controller
      */
     public function show($id)
     {
-        //Return view
-        $family = Product_family::find($id);
-
-        return view('admin.families.detail', [
-            'family' => $family
-        ]);
+        return redirect()->back();
     }
 
     /**
@@ -85,7 +93,7 @@ class FamiliesController extends Controller
      */
     public function edit($id)
     {
-        return redirect()->back();
+        //
     }
 
     /**
@@ -98,8 +106,6 @@ class FamiliesController extends Controller
     public function update(Request $request, $id)
     {
         //
-
-        return redirect()->back();
     }
 
     /**
@@ -110,6 +116,6 @@ class FamiliesController extends Controller
      */
     public function destroy($id)
     {
-        return redirect()->back();
+        //
     }
 }

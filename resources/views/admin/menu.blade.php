@@ -7,7 +7,7 @@
             <a href="{{route('families.index')}}" class="nav-link">Familias</a>
         </li>
         <li class="nav-item">
-            <a href="" class="nav-link">Categorias</a>
+            <a href="{{route('categories.index')}}" class="nav-link">Categorias</a>
         </li>
     </ul>
 </x-card>
