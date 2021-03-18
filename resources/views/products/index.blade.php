@@ -76,36 +76,16 @@
                     <div class="row row-cols-1 row-cols-md-3">
 
                         @forelse($products as $product)
-                        <div class="col mb-4">
-                            <div class="card h-100 item">
-                                <img src="{{ asset($product['image']) }}" class="card-img-top" alt="Imagen de {{ $product['id'] }}">
-                                <div class="card-body item-info">
-                                    <h4 class="card-title">{{ $product['id'] }}</h4>
-                                    <span>{{ $product['category'] }}</span>
-                                    <p>{{ $product['description'] }}</p>
-                                    <a href="{{route($familyId[0]->url . '.show', $product['id'])}}" class="btn">Ver más</a>
-                                </div>
-                            </div>
-                        </div>
+                            <x-product-card code="{{$product->code}}" family="{{$familyId[0]->id}}" url="{{$familyId[0]->url . '.show'}}"/>
                         @empty
                         <p class="text-center">No hay productos disponibles por el momento</p>
                         @endforelse
 
 
                     </div>
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                            </li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">Next</a>
-                            </li>
-                        </ul>
-                    </nav>
+
+                    {{$products->links()}}
+
                 </div>
             </div>
 

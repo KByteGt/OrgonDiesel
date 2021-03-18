@@ -10815,6 +10815,7 @@ section {
   border-right: 4px;
   background: white;
   border: 1px solid #deebfd;
+  position: relative;
   transition-duration: 0.2s;
   transition-property: all;
   transition-timing-function: ease-in-out;
@@ -10824,7 +10825,10 @@ section {
   overflow: hidden;
 }
 .products-view .item .item-info {
-  padding: 25px 15px;
+  padding-top: 25px;
+  padding-bottom: 45px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 .products-view .item .item-info h4 {
   font-weight: 700;
@@ -10844,15 +10848,18 @@ section {
   line-height: 26px;
   color: #777777;
 }
-.products-view .item .item-info a, .products-view .item .item-info button {
+.products-view .item a, .products-view .item button {
   display: block;
-  width: 100%;
   padding: 8px 0;
   text-align: center;
   background: #DB0016;
   color: white;
+  position: absolute;
+  right: 6%;
+  left: 6%;
+  bottom: 20px;
 }
-.products-view .item .item-info a:hover, .products-view .item .item-info button:hover {
+.products-view .item a:hover, .products-view .item button:hover {
   background: #ED0016;
 }
 .products-view .item:hover {

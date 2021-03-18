@@ -33,21 +33,20 @@ class LubricantController extends Controller
         //return $families;
 
         $search = null;
-        $items = [
-            ['id' => 'OD-25009', 'category' => 'Motocicleta', 'description' => '4T 20W-50 Semisintetico 1L', 'image' => '/products/lubricants/DSC_0342.png'],
-            ['id' => 'OD-25012', 'category' => 'Vehiculos livianos', 'description' => '20W-50 Semisintetico Plus 5L', 'image' => '/products/lubricants/DSC_0320.png'],
-            ['id' => 'OD-25009', 'category' => 'Motocicleta', 'description' => '4T 20W-50 Semisintetico 1L', 'image' => '/products/lubricants/DSC_0342.png'],
-            ['id' => 'OD-25012', 'category' => 'Vehiculos livianos', 'description' => '20W-50 Semisintetico Plus 5L', 'image' => '/products/lubricants/DSC_0320.png'],
-            ['id' => 'OD-25009', 'category' => 'Motocicleta', 'description' => '4T 20W-50 Semisintetico 1L', 'image' => '/products/lubricants/DSC_0342.png'],
-            ['id' => 'OD-25009', 'category' => 'Motocicleta', 'description' => '4T 20W-50 Semisintetico 1L', 'image' => '/products/lubricants/DSC_0342.png'],
-            ['id' => 'OD-25012', 'category' => 'Vehiculos livianos', 'description' => '20W-50 Semisintetico Plus 5L', 'image' => '/products/lubricants/DSC_0320.png']
-        ];
+
+        $products = DB::table('products')
+            ->select('code')
+            ->where('family_id','=',3)
+            ->orderBy('code')
+            ->paginate('12');
+
+        //return $products;
 
         return view('products.index', [
             'familyId' => $family,
             'families' => $families,
             'categories' => $categories,
-            'products' => $items,
+            'products' => $products,
             'search' => $search
         ]);
     }
