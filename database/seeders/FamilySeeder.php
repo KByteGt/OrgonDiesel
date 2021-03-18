@@ -14,6 +14,7 @@ class FamilySeeder extends Seeder
      */
     public function run()
     {
+        // 1
         DB::table('product_families')->insert([
             'name' => 'Inyección Diesel',
             'url' => 'inyections',
@@ -22,6 +23,7 @@ class FamilySeeder extends Seeder
             'updated_at' => now(),
         ]);
 
+        //2
         DB::table('product_families')->insert([
             'name' => 'Turbos',
             'url' => 'turbos',
@@ -30,6 +32,7 @@ class FamilySeeder extends Seeder
             'updated_at' => now(),
         ]);
 
+        //3
         DB::table('product_families')->insert([
             'name' => 'Lubricantes',
             'url' => 'lubricants',
@@ -37,5 +40,7 @@ class FamilySeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
+
+        echo ' -> Families loaded...';
     }
 }

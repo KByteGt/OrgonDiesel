@@ -23,7 +23,7 @@ class CreateLubricantsTable extends Migration
             $table->integer('category_id')
                 ->default(0);
             $table->string('image',191)
-                ->default('default.png');
+                ->default('/products/default.jpg');
             $table->string('datasheet',191)
                 ->nullable();
             $table->boolean('active')

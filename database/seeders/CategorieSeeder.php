@@ -15,6 +15,7 @@ class CategorieSeeder extends Seeder
     public function run()
     {
         //Lubricants, ID = 3
+        //1
         DB::table('product_categories')->insert([
             'family_id' => 3,
             'active' => true,
@@ -23,6 +24,7 @@ class CategorieSeeder extends Seeder
             'updated_at' => now()
         ]);
 
+        //2
         DB::table('product_categories')->insert([
             'family_id' => 3,
             'active' => true,
@@ -31,6 +33,7 @@ class CategorieSeeder extends Seeder
             'updated_at' => now()
         ]);
 
+        //3
         DB::table('product_categories')->insert([
             'family_id' => 3,
             'active' => true,
@@ -39,6 +42,7 @@ class CategorieSeeder extends Seeder
             'updated_at' => now()
         ]);
 
+        //4
         DB::table('product_categories')->insert([
             'family_id' => 3,
             'active' => true,
@@ -48,7 +52,7 @@ class CategorieSeeder extends Seeder
         ]);
 
         //Turbos, ID = 2
-
+        //5
         DB::table('product_categories')->insert([
             'family_id' => 2,
             'active' => true,
@@ -57,6 +61,7 @@ class CategorieSeeder extends Seeder
             'updated_at' => now()
         ]);
 
+        //6
         DB::table('product_categories')->insert([
             'family_id' => 2,
             'active' => true,
@@ -65,6 +70,7 @@ class CategorieSeeder extends Seeder
             'updated_at' => now()
         ]);
 
+        //7
         DB::table('product_categories')->insert([
             'family_id' => 2,
             'active' => true,
@@ -73,6 +79,7 @@ class CategorieSeeder extends Seeder
             'updated_at' => now()
         ]);
 
+        //8
         DB::table('product_categories')->insert([
             'family_id' => 2,
             'active' => true,
@@ -81,6 +88,7 @@ class CategorieSeeder extends Seeder
             'updated_at' => now()
         ]);
 
+        //9
         DB::table('product_categories')->insert([
             'family_id' => 2,
             'active' => true,
@@ -89,6 +97,7 @@ class CategorieSeeder extends Seeder
             'updated_at' => now()
         ]);
 
+        //10
         DB::table('product_categories')->insert([
             'family_id' => 2,
             'active' => true,
@@ -97,6 +106,7 @@ class CategorieSeeder extends Seeder
             'updated_at' => now()
         ]);
 
+        //11
         DB::table('product_categories')->insert([
             'family_id' => 2,
             'active' => true,
@@ -106,5 +116,7 @@ class CategorieSeeder extends Seeder
         ]);
 
         //Inyección Diesel, ID = 1
+
+        echo ' -> Categories loaded...';
     }
 }
