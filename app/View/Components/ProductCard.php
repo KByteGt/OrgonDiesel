@@ -9,22 +9,21 @@ class ProductCard extends Component
 {
     public $product;
     public $family;
+    public $category;
     public $url;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($code, $family, $url)
+    public function __construct($code, $family, $category, $url)
     {
         $this->family = $family;
         $this->url = $url;
 
         if($family == "3"){
             $this->product = DB::table('lubricants')
-                ->join('product_categories', 'lubricants.category_id','=','product_categories.id')
-                ->select('lubricants.*','product_categories.name as category')
-                ->where('code', '=', $code)
+                ->where('code', $code)
                 ->first();
 
         }else {

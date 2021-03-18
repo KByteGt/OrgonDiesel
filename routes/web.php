@@ -25,22 +25,30 @@ Route::get('/', function () {
 
 //Lubricans route
 Route::prefix('lubricantes')->group(function () {
-    Route::get('/', [LubricantController::class, 'index'])->name('lubricants');
-    Route::get('/{code}', [LubricantController::class, 'show'])->name('lubricants.show');
+    Route::get('/{category?}', [LubricantController::class, 'index'])
+        ->whereNumber('category')
+        ->name('lubricants');
+    Route::post('/busqueda', [LubricantController::class, 'search'])->name('lubricants.search');
+    Route::get('/{code}', [LubricantController::class, 'show'])
+        ->whereAlphaNumeric('code')
+        ->name('lubricants.show');
 });
 
 //Diesel inyections route
 Route::prefix('inyeccion')->group(function () {
-    Route::get('/')->name('inyections');
+    Route::get('/')
+        ->name('inyections');
 });
 
 //Turbos route
 Route::prefix('turbos')->group(function () {
-    Route::get('/')->name('turbos');
+    Route::get('/')
+        ->name('turbos');
 });
 
 
-Route::post('/email', [ContactFormController::class, 'store'])->name('sendMailContactForm');
+Route::post('/email', [ContactFormController::class, 'store'])
+    ->name('sendMailContactForm');
 
 Auth::routes(['register' => false]);
 
@@ -48,7 +56,10 @@ Auth::routes(['register' => false]);
 
 Route::prefix('/admin')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
-    Route::resource('products', ProductController::class)->except('create', 'edit');
-    Route::resource('families', FamiliesController::class)->except('create', 'edit');
-    Route::resource('categories', CategoriesController::class)->except('create','edit');
+    Route::resource('products', ProductController::class)
+        ->except('create', 'edit');
+    Route::resource('families', FamiliesController::class)
+        ->except('create', 'edit');
+    Route::resource('categories', CategoriesController::class)
+        ->except('create','edit');
 });

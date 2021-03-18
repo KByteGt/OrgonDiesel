@@ -17,6 +17,7 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('code')->unique();
             $table->integer('family_id');
+            $table->integer('category_id');
             $table->double('score')->default(0);
             $table->boolean('active')->default(true);
             $table->boolean('assigned')->default(false);

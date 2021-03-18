@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use mysql_xdevapi\Table;
 
 class LubricantController extends Controller
 {
@@ -12,19 +13,12 @@ class LubricantController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($category = 0)
     {
         //Display products view
         $family = DB::table('product_families')
             ->where('name', 'Lubricantes')
-            ->get();
-
-        $categories = DB::table('product_categories')
-            ->where('family_id', $family[0]->id)
-            ->orderBy('name','ASC')
-            ->get();
-
-        //return $categories;
+            ->first();
 
         $families = DB::table('product_families')
             ->orderBy('name','ASC')
@@ -33,21 +27,38 @@ class LubricantController extends Controller
         //return $families;
 
         $search = null;
+        $fillter = null;
 
-        $products = DB::table('products')
-            ->select('code')
-            ->where('family_id','=',3)
-            ->orderBy('code')
-            ->paginate('12');
+        if($category != '0'){
+            $products = DB::table('products')
+                ->select('code','family_id', 'category_id')
+                ->where('family_id','=',3)
+                ->where('category_id', $category)
+                ->orderBy('code')
+                ->paginate('12');
+
+            $fillter = DB::table('product_categories')
+                ->select('name')
+                ->where('id', $category)
+                ->first();
+
+        } else {
+            $products = DB::table('products')
+                ->select('code','family_id', 'category_id')
+                ->where('family_id','=',3)
+                ->orderBy('code')
+                ->paginate('12');
+        }
+
 
         //return $products;
 
         return view('products.index', [
             'familyId' => $family,
             'families' => $families,
-            'categories' => $categories,
             'products' => $products,
-            'search' => $search
+            'search' => $search,
+            'fillter' => $fillter
         ]);
     }
 
@@ -62,6 +73,27 @@ class LubricantController extends Controller
         //Display detail view
 
         return view('products.detail', ['code' => $code]);
+    }
+
+    public function search(Request $request){
+        //Validations
+        $fields =$request->validate([
+            'search' => 'required'
+        ]);
+
+        $fillter = null;
+        $search = $fields->search;
+        $family = DB::table('product_families')
+            ->where('name', 'Lubricantes')
+            ->get();
+
+        return view('products.index', [
+            'familyId' => $family,
+            'families' => $families,
+            'products' => $products,
+            'search' => $search,
+            'fillter' => $fillter
+        ]);
     }
 
 }

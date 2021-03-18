@@ -117,6 +117,6 @@ class CategorieSeeder extends Seeder
 
         //Inyección Diesel, ID = 1
 
-        echo ' -> Categories loaded...';
+        echo ' -> Categories loaded...\n';
     }
 }

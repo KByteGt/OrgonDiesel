@@ -41,6 +41,6 @@ class FamilySeeder extends Seeder
             'updated_at' => now(),
         ]);
 
-        echo ' -> Families loaded...';
+        echo ' -> Families loaded...\n';
     }
 }
