@@ -47,12 +47,12 @@ class TurboController extends Controller
     public function show($code)
     {
         //Display detail view
-        $product = DB::table('lubricants')
-            ->join('products','lubricants.code','=', 'products.code')
+        $product = DB::table('turbos')
+            ->join('products','turbos.code','=', 'products.code')
             ->join('product_categories','products.category_id','=','product_categories.id')
             ->join('product_families','products.family_id','=','product_families.id')
-            ->select('lubricants.*','product_families.name as family','product_families.url as url','product_categories.name as category')
-            ->where('lubricants.code', $code)
+            ->select('turbos.*','product_families.name as family','product_families.url as url','product_categories.name as category')
+            ->where('turbos.code', $code)
             ->first();
 
         return view('products.detail', [

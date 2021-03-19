@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             FamilySeeder::class,
             CategorieSeeder::class,
-            LubricantSeeder::class
+            LubricantSeeder::class,
+            TurboSeeder::class
         ]);
     }
 }

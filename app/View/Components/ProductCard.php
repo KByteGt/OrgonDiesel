@@ -26,7 +26,11 @@ class ProductCard extends Component
             $this->product = DB::table('lubricants')
                 ->where('code', $code)
                 ->first();
-        }else {
+        }else if($family == "2"){
+            $this->product = DB::table('turbos')
+                ->where('code', $code)
+                ->first();
+        } else {
             return 'Error, la categoria no existe';
         }
 
