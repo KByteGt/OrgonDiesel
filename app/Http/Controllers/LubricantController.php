@@ -48,16 +48,32 @@ class LubricantController extends Controller
     public function show($code)
     {
         //Display detail view
-        $product = DB::table('lubricants')
+        /*$product = DB::table('lubricants')
             ->join('products','lubricants.code','=', 'products.code')
             ->join('product_categories','products.category_id','=','product_categories.id')
             ->join('product_families','products.family_id','=','product_families.id')
             ->select('lubricants.*','product_families.name as family','product_families.url as url','product_categories.name as category')
             ->where('lubricants.code', $code)
+            ->first();*/
+
+        $product = DB::table('lubricants')
+            ->join('products', 'lubricants.code','=','products.code')
+            ->select('lubricants.*','products.category_id as category_id','products.family_id as family_id')
+            ->where('lubricants.code', $code)
+            ->first();
+
+        $family = DB::table('product_families')
+            ->where('id', 3)
+            ->first();
+
+        $category = DB::table('product_categories')
+            ->where('id', $product->category_id)
             ->first();
 
         return view('products.detail', [
-            'product' => $product
+            'product' => $product,
+            'family' => $family,
+            'category' => $category
         ]);
     }
 

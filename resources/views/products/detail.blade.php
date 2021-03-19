@@ -5,20 +5,20 @@
     <main id="main" class="mt-nav">
 
 
-        <x-section id="products" class="featured-product " tag="{{$product->family}}" title="<span>{{$product->code}}</span>">
+        <x-section id="products" class="featured-product " tag="{{$family->name}}" title="<span>{{$product->code}}</span>">
 
             <x-slot name="paragraph">
-                <a href="{{route($product->url)}}" class="btn">Regresar</a>
+                <a href="{{route($family->url)}}" class="btn">Regresar</a>
             </x-slot>
 
             <div class="row">
                 <div class="col-12 col-lg-5 mb-4">
                     <div class="card h-100 item-view">
                         <div class="card-header item-title">
-                            <a href="{{route($product->url)}}" class="mb-0">{{$product->family}}</a> / <span>{{$product->category}}</span>
+                            <a href="{{route($family->url)}}" class="mb-0">{{$family->name}}</a> / <span>{{$category->name}}</span>
                         </div>
                         <div class="card-body item-info">
-                            @if($product->family == 'Lubricantes')
+                            @if($family->id == 3)
                                 <h4>Código</h4>
                                 <p>{{$product->code}}</p>
                                 <hr>
@@ -31,7 +31,7 @@
                                 <h4>Presentación</h4>
                                 <p>{{$product->presentation}}</p>
 
-                            @elseif($product->family == 'Turbos')
+                            @elseif($family->id == 2)
                                 <h4>Código</h4>
                                 <p>{{$product->code}}</p>
                                 <hr>
@@ -50,7 +50,7 @@
                         </div>
 
                         <div class="card-footer">
-                            @if($product->family == 'Lubricantes' and $product->datasheet)
+                            @if($family->id == 3 and $product->datasheet)
                                 <a href="{{$product->datasheet}}" target="_blank" class="btn btn-block btn-success mb-2">Datasheet</a>
                             @endif
                             {{-- <button class="btn btn-primary-red">Cotizar</button>--}}
@@ -80,10 +80,10 @@
                 </div>
             </div>
 
-            <x-mostSold>También te puede interesar</x-mostSold>
+            {{--<x-mostSold>También te puede interesar</x-mostSold>--}}
 
             <div class="text-center">
-                <a href="{{route($product->url)}}" class="btn btn-outline-secondary px-5"><i class="fas fa-long-arrow-alt-left"></i> Regresar</a>
+                <a href="{{route($family->url)}}" class="btn btn-outline-secondary px-5"><i class="fas fa-long-arrow-alt-left"></i> Regresar</a>
             </div>
 
         </x-section>

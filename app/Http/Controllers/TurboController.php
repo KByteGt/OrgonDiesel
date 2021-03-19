@@ -47,16 +47,32 @@ class TurboController extends Controller
     public function show($code)
     {
         //Display detail view
-        $product = DB::table('turbos')
+        /*$product = DB::table('turbos')
             ->join('products','turbos.code','=', 'products.code')
             ->join('product_categories','products.category_id','=','product_categories.id')
             ->join('product_families','products.family_id','=','product_families.id')
             ->select('turbos.*','product_families.name as family','product_families.url as url','product_categories.name as category')
             ->where('turbos.code', $code)
+            ->first();*/
+
+        $product = DB::table('turbos')
+            ->join('products', 'turbos.code','=','products.code')
+            ->select('turbos.*','products.category_id as category_id','products.family_id as family_id')
+            ->where('turbos.code', $code)
+            ->first();
+
+        $family = DB::table('product_families')
+            ->where('id', 2)
+            ->first();
+
+        $category = DB::table('product_categories')
+            ->where('id', $product->category_id)
             ->first();
 
         return view('products.detail', [
-            'product' => $product
+            'product' => $product,
+            'family' => $family,
+            'category' => $category
         ]);
     }
 

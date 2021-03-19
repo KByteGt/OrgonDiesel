@@ -7,9 +7,9 @@
 
 
     <main id="main">
-        <x-most-sold>
+        {{--<x-most-sold>
             <h1 class="text-center">Productos <span class="text-danger font-weight-bold">{{date('Y')}}</span></h1>
-        </x-most-sold>
+        </x-most-sold>--}}
 
     @include('components.website.about')
 
