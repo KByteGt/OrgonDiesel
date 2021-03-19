@@ -19,7 +19,8 @@ class CreateTurbosTable extends Migration
                 ->unique();
             $table->string('description');
             $table->string('model',15);
-            $table->string('application');
+            $table->string('application')
+                ->nullable();
             $table->string('year')
                 ->nullable();
             $table->string('image')

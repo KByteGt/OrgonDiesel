@@ -42,7 +42,7 @@
                                 <p>{{$product->model}}</p>
                                 <hr>
                                 <h4>Aplicación</h4>
-                                <p>{{$product->application}}</p>
+                                <p>{{$product->application ? $product->application : 'Sin especificar'}}</p>
                                 <hr>
                                 <h4>Año</h4>
                                 <p>{{$product->year ? $product->year : 'Sin especificar'}}</p>
