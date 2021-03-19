@@ -10,21 +10,7 @@
                 <li class="active"><a href="{{route('index')}}/#">@lang('Home')</a></li>
                 <li class=""><a href="{{route('index')}}/#about">@lang('About')</a></li>
 
-                <li class="drop-down">
-                    <a href="{{route('index')}}/#products">@lang('Products')</a>
-                    <ul>
-                        <li><a href="">@lang('Diesel injection')</a></li>
-                        <li><a href="">@lang('Turbos')</a></li>
-                        <li class="drop-down"><a href="{{ route('lubricants') }}">@lang('Lubricants')</a>
-                            <ul>
-                                <li><a href="">@lang('Moto')</a></li>
-                                <li><a href="">@lang('Vehiculos livianos')</a></li>
-                                <li><a href="">@lang('Vehiculos semi pesados y pesados')</a></li>
-                                <li><a href="">@lang('Refrigerantes')</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+                <x-products-menu-list/>
 
                 <li class=""><a href="{{route('index')}}/#contact">@lang('Contact')</a></li>
             </ul>

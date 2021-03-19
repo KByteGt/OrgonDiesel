@@ -19,13 +19,13 @@ class ProductCard extends Component
     public function __construct($code, $family, $category, $url)
     {
         $this->family = $family;
+        $this->category = $category;
         $this->url = $url;
 
         if($family == "3"){
             $this->product = DB::table('lubricants')
                 ->where('code', $code)
                 ->first();
-
         }else {
             return 'Error, la categoria no existe';
         }

@@ -18,7 +18,7 @@ class FamilySeeder extends Seeder
         DB::table('product_families')->insert([
             'name' => 'Inyección Diesel',
             'url' => 'inyections',
-            'active' => true,
+            'active' => false,
             'created_at' => now(),
             'updated_at' => now(),
         ]);

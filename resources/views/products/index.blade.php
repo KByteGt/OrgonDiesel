@@ -14,17 +14,16 @@
 
         <x-section id="products" class="featured-product " tag="productos" title="<span>Lubricantes</span>">
 
-
-            @if($search != null)
-                <x-slot name="paragraph">
+            @if($filter || $search)
+            <x-slot name="paragraph">
+                @if($filter != null)
+                    <h4>{{ $filter->name }}</h4>
+                @endif
+                @if($search != null)
                     <p>Resultado de la busquda: <strong>{{ $search }}</strong></p>
-                    <a href="{{route($familyId->url)}}">ver todo <i class="fas fa-stream"></i></a>
-                </x-slot>
-            @elseif($fillter != null)
-                <x-slot name="paragraph">
-                    <h4>{{ $fillter->name }}</h4>
-                    <a href="{{route($familyId->url)}}">ver todo <i class="fas fa-stream"></i></a>
-                </x-slot>
+                @endif
+                    <a href="{{route($family->url)}}">ver todo <i class="fas fa-stream"></i></a>
+            </x-slot>
             @endif
 
 
@@ -33,7 +32,7 @@
 
                     <div class="card mb-4">
                         <div class="card-header">
-                            <form action="{{ route($familyId->url .'.search') }}" method="post">
+                            <form action="{{ route($family->url .'.search') }}" method="post">
                                 @csrf
                                 <div class="input-group">
                                     <input type="text" name="search" id="search" class="form-control" placeholder="Código de producto?" aria-label="Search field" aria-describedby="button-search">
@@ -46,18 +45,14 @@
                         </div>
                         <div class="card-body">
 
-                            <x-category-menu id="{{$familyId->id}}"/>
+                            <x-category-menu id="{{$family->id}}"/>
 
                         </div>
 
                         <div class="card-footer">
-                            <p class="card-text">También te puede interesar:</p>
-                            <hr>
-                            @foreach($families as $family)
-                                @if($family->id != $familyId->id)
-                                    <a href="{{route($family->url)}}" class="btn-block">{{$family->name}}</a>
-                                @endif
-                            @endforeach
+
+                            <x-family-menu id="{{$family->id}}"/>
+
                         </div>
 
                     </div>
@@ -79,7 +74,7 @@
                     <div class="row row-cols-1 row-cols-md-3">
 
                         @forelse($products as $product)
-                            <x-product-card code="{{$product->code}}" family="{{$product->family_id}}" category="{{$product->category_id}}" url="{{$familyId->url . '.show'}}"/>
+                            <x-product-card code="{{$product->code}}" family="{{$product->family_id}}" category="{{$product->category_id}}" url="{{$family->url . '.show'}}"/>
                         @empty
                         <p class="text-center">No hay productos disponibles por el momento</p>
                         @endforelse

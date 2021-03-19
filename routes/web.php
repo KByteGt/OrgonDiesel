@@ -25,13 +25,14 @@ Route::get('/', function () {
 
 //Lubricans route
 Route::prefix('lubricantes')->group(function () {
-    Route::get('/{category?}', [LubricantController::class, 'index'])
-        ->whereNumber('category')
+    Route::get('/', [LubricantController::class, 'index'])
         ->name('lubricants');
-    Route::post('/busqueda', [LubricantController::class, 'search'])->name('lubricants.search');
+    Route::post('/', [LubricantController::class, 'search'])
+        ->name('lubricants.search');
     Route::get('/{code}', [LubricantController::class, 'show'])
-        ->whereAlphaNumeric('code')
         ->name('lubricants.show');
+    Route::get('/categoria/{category}', [LubricantController::class, 'filter'])
+        ->name('lubricants.category');
 });
 
 //Diesel inyections route

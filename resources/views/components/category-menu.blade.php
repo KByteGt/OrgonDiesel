@@ -4,7 +4,7 @@
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         @foreach($categories as $category)
-            <a href="{{ route($family->url, $category->id) }}" class="dropdown-item"> {{ $category->name }}</a>
+            <a href="{{ route($family->url.'.category', $category->id) }}" class="dropdown-item"> {{ $category->name }}</a>
         @endforeach
     </div>
 </div>
@@ -13,6 +13,6 @@
     <p class="card-text">Categorias</p>
     <hr>
     @foreach($categories as $category)
-        <a href="{{ route($family->url, $category->id) }}" class="btn-block"><i class="fas fa-caret-right"></i> {{ $category->name }}</a>
+        <a href="{{ route($family->url.'.category', $category->id) }}" class="btn-block"><i class="fas fa-caret-right"></i> {{ $category->name }}</a>
     @endforeach
 </div>
