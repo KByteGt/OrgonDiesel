@@ -141,7 +141,7 @@ class TurboSeeder extends Seeder
             'updated_at' => now()
         ]);
 
-        /// Product:
+        /// Product: OD-18006
         DB::table('turbos')->insert([
             'code' => 'OD-18006',
             'description' => 'Turbo',
@@ -728,31 +728,6 @@ class TurboSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
-
-
-        /* Category: Cartuchos, ID: 6 */
-        /// Product:
-        /*DB::table('turbos')->insert([
-            'code' => '',
-            'description' => '',
-            'model' => '',
-            'application' => '',
-            'year' => '',
-            'image' => '/products/turbos/',
-            'created_at' => now(),
-            'updated_at' => now()
-        ]);
-
-        DB::table('products')->insert([
-            'code' => '',
-            'family_id' => 2,
-            'category_id' => 6,
-            'assigned' => true,
-            'created_at' => now(),
-            'updated_at' => now()
-        ]);
-
-        */
 
         echo ' -> Loaded Turbos... ';
     }

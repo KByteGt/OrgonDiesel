@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
             FamilySeeder::class,
             CategorieSeeder::class,
             LubricantSeeder::class,
-            TurboSeeder::class
+            TurboSeeder::class,
+            CartuchosSeeder::class
         ]);
     }
 }
