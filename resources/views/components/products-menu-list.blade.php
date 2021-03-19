@@ -1,13 +1,13 @@
 <li class="drop-down">
     <a href="{{route('index')}}/#products">@lang('Products')</a>
     <ul>
-        <li><a href="#products">@lang('Diesel injection')</a></li>
+        {{--<li><a href="{{route('index')}}#products">@lang('Diesel injection')</a></li>--}}
 
         @if(count($turbosList) > 0)
         <li class="drop-down"><a href="{{ route('turbos') }}">@lang('Turbos')</a>
             <ul>
                 @foreach($turbosList as $menu)
-                    <li><a href="{{ $menu->id }}">{{$menu->name}}</a></li>
+                    <li><a href="{{ route('turbos.category', $menu->id) }}">{{$menu->name}}</a></li>
                 @endforeach
             </ul>
         </li>
