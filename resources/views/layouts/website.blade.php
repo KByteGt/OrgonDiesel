@@ -42,6 +42,7 @@
     --}}
 </head>
 <body>
+
 <div id="app">
     @include('components.website.top_bar')
     @include('components.website.nav')
@@ -50,6 +51,9 @@
 
     @include('components.website.footer')
 
+    <a href="https://wa.me/50254637035" class="btn-whatsapp align-items-center d-block d-sm-block d-md-none">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 </div>
 </body>
 </html>
