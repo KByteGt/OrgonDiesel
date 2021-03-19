@@ -19,23 +19,39 @@
                         </div>
                         <div class="card-body item-info">
                             @if($product->family == 'Lubricantes')
-                            <h4>Código</h4>
-                            <p>{{$product->code}}</p>
-                            <hr>
-                            <h4>Descripción</h4>
-                            <p>{{$product->description}}</p>
-                            <hr>
-                            <h4>Detalle</h4>
-                            <p>{!!$product->detail!!}</p>
-                            <hr>
-                            <h4>Presentación</h4>
-                            <p>{{$product->presentation}}</p>
+                                <h4>Código</h4>
+                                <p>{{$product->code}}</p>
+                                <hr>
+                                <h4>Descripción</h4>
+                                <p>{{$product->description}}</p>
+                                <hr>
+                                <h4>Detalle</h4>
+                                <p>{!!$product->detail!!}</p>
+                                <hr>
+                                <h4>Presentación</h4>
+                                <p>{{$product->presentation}}</p>
+
+                            @elseif($product->family == 'Turbos')
+                                <h4>Código</h4>
+                                <p>{{$product->code}}</p>
+                                <hr>
+                                <h4>Descripción</h4>
+                                <p>{{$product->description}}</p>
+                                <hr>
+                                <h4>Modelo</h4>
+                                <p>{{$product->model}}</p>
+                                <hr>
+                                <h4>Aplicación</h4>
+                                <p>{{$product->application}}</p>
+                                <hr>
+                                <h4>Año</h4>
+                                <p>{{$product->year ? $product->year : 'Sin especificar'}}</p>
                             @endif
                         </div>
 
                         <div class="card-footer">
-                            @if($product->datasheet)
-                                <a href="{{$product->datasheet}}" class="btn btn-block btn-success mb-2">Datasheet</a>
+                            @if($product->family == 'Lubricantes' and $product->datasheet)
+                                <a href="{{$product->datasheet}}" target="_blank" class="btn btn-block btn-success mb-2">Datasheet</a>
                             @endif
                             {{-- <button class="btn btn-primary-red">Cotizar</button>--}}
                         </div>

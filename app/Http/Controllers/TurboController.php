@@ -68,14 +68,15 @@ class TurboController extends Controller
 
         $this->search = $request->search;
         $family = DB::table('product_families')
-            ->where('name', 'Lubricantes')
+            ->where('name', 'Turbos')
             ->first();
 
-        $products = DB::table('lubricants')
-            ->join('products','lubricants.code','=','products.code')
-            ->select('lubricants.*','products.family_id as family_id', 'products.category_id as category_id')
-            ->where('lubricants.code','LIKE',"%{$this->search}%")
+        $products = DB::table('turbos')
+            ->join('products','turbos.code','=','products.code')
+            ->select('turbos.*','products.family_id as family_id', 'products.category_id as category_id')
+            ->where('turbos.code','LIKE',"%{$this->search}%")
             ->orWhere('description','LIKE',"%{$this->search}%")
+            ->orWhere('model','LIKE',"%{$this->search}%")
             //->orWhere('detail','LIKE',"%{$this->search}%")
             ->paginate(12);
 
@@ -90,12 +91,12 @@ class TurboController extends Controller
     public function filter($category){
 
         $family = DB::table('product_families')
-            ->where('name', 'Lubricantes')
+            ->where('name', 'Turbos')
             ->first();
 
         $products = DB::table('products')
             ->select('code','family_id', 'category_id')
-            ->where('family_id','=',3)
+            ->where('family_id','=',2)
             ->where('category_id', $category)
             ->orderBy('code')
             ->paginate('12');

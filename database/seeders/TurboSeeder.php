@@ -232,7 +232,7 @@ class TurboSeeder extends Seeder
             'model' => 'GT20',
             'application' => 'Nissan Navara 2.5L Euro III, Euro IV',
             'year' => '2005 --',
-            'image' => '/products/turbos/OD-18010',
+            //'image' => '/products/turbos/OD-18010',
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -267,7 +267,7 @@ class TurboSeeder extends Seeder
             'updated_at' => now()
         ]);
 
-        /// Product:
+        /// Product: OD-18012
         DB::table('turbos')->insert([
             'code' => 'OD-18012',
             'description' => 'Turbo',
