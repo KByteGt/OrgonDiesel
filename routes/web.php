@@ -7,6 +7,7 @@ use \App\Http\Controllers\LubricantController;
 use \App\Http\Controllers\ContactFormController;
 use \App\Http\Controllers\FamiliesController;
 use \App\Http\Controllers\CategoriesController;
+use \App\Http\Controllers\TurboController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,8 +44,14 @@ Route::prefix('inyeccion')->group(function () {
 
 //Turbos route
 Route::prefix('turbos')->group(function () {
-    Route::get('/')
+    Route::get('/', [TurboController::class, 'index'])
         ->name('turbos');
+    Route::post('/', [TurboController::class, 'search'])
+        ->name('turbos.search');
+    Route::get('/{code}', [TurboController::class, 'show'])
+        ->name('turbos.show');
+    Route::get('/categoria/{category}', [TurboController::class, 'filter'])
+        ->name('turbos.category');
 });
 
 

@@ -12,7 +12,7 @@
 
     <main id="main" class="mt-nav">
 
-        <x-section id="products" class="featured-product " tag="productos" title="<span>Lubricantes</span>">
+        <x-section id="products" class="featured-product " tag="productos" title="<span>{{$family->name}}</span>">
 
             @if($filter || $search)
             <x-slot name="paragraph">
@@ -71,18 +71,35 @@
                     <x-errors text="Error" strong="!"/>
                     <x-status/>
 
+                    @if(count($products) > 0)
                     <div class="row row-cols-1 row-cols-md-3">
 
-                        @forelse($products as $product)
+                        @foreach($products as $product)
                             <x-product-card code="{{$product->code}}" family="{{$product->family_id}}" category="{{$product->category_id}}" url="{{$family->url . '.show'}}"/>
-                        @empty
-                        <p class="text-center">No hay productos disponibles por el momento</p>
-                        @endforelse
+                        @endforeach
 
 
                     </div>
 
                     {{$products->links()}}
+
+                    @else
+                        <p class="text-center text-muted mt-5">
+                            <span class="text-danger" style="font-size: 3rem">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </span>
+                            <br/>
+                            No hay productos disponibles por el momento
+                        </p>
+                        <hr class="mx-5 align-self-center"/>
+                        <p class="text-center text-muted mb-5">
+                            puedes ponerte en contacto con nosotros, con gusto te atenderemos
+                            <br/>
+                            <strong>info@orgondiesel.com</strong>
+                            <br>
+                            <strong>+502 2500 0200</strong>
+                        </p>
+                    @endif
 
                 </div>
             </div>
