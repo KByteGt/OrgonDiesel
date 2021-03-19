@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\View\Component;
 
 class mostSold extends Component
@@ -16,13 +17,12 @@ class mostSold extends Component
     {
         //Obtener listado de productos
 
-        //Data example
-        $this->products = [
-            ['code' => 'OD-C104', 'family' => 'Turbo', 'description' => 'Turbo para camión', 'image' => '/products/C104.jpg', 'url' => '/turbos/turbo/od-c104'],
-            ['code' => 'OD-C104', 'family' => 'Turbo', 'description' => 'Turbo para camión', 'image' => '/products/C104.jpg', 'url' => '/turbos/turbo/od-c104'],
-            ['code' => 'OD-C104', 'family' => 'Turbo', 'description' => 'Turbo para camión', 'image' => '/products/C104.jpg', 'url' => '/turbos/turbo/od-c104'],
-            ['code' => 'OD-C104', 'family' => 'Turbo', 'description' => 'Turbo para camión', 'image' => '/products/C104.jpg', 'url' => '/turbos/turbo/od-c104'],
-        ];
+        /*
+        $this->products = DB::table('products')
+            //->join('product_families', 'products.family_id','=','product_families.id')
+            //->select('products.*', 'product_families.url as url')
+            ->orderBy('products.score','DESC')
+            ->limit(4);*/
     }
 
     /**
